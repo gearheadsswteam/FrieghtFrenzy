@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\menu\\main_menu.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\a6509d1f15970ba729d1ee67678ca17f\\jetified-Inspection-6.2.1\\res\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\menu\\ftc_robot_controller.xml",
+        "source": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\src\\main\\res\\menu\\ftc_robot_controller.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\menu\\menu_server.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\60828a27da8a757706169f6686559068\\jetified-Blocks-6.2.1\\res\\menu\\menu_server.xml"
+    }
+]

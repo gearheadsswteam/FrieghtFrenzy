@@ -1,0 +1,222 @@
+[
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\429fb715fcc7711d4ab133e350b6f531\\core-1.3.0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\429fb715fcc7711d4ab133e350b6f531\\core-1.3.0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\ultimategoal_background.webp",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\drawable\\ultimategoal_background.webp"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\black_border.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\60828a27da8a757706169f6686559068\\jetified-Blocks-6.2.1\\res\\drawable\\black_border.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_mtrl.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material_anim.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_radio_material_anim.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\429fb715fcc7711d4ab133e350b6f531\\core-1.3.0\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\icon_menu.png",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\60828a27da8a757706169f6686559068\\jetified-Blocks-6.2.1\\res\\drawable\\icon_menu.png"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\ic_arrow_back_black_24dp.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\drawable\\ic_arrow_back_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_unchecked_mtrl.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_unchecked_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_checked_mtrl.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_checked_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\icon_robotcontroller.png",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\a6509d1f15970ba729d1ee67678ca17f\\jetified-Inspection-6.2.1\\res\\drawable\\icon_robotcontroller.png"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material_anim.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_check_material_anim.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\button_shape.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\drawable\\button_shape.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_to_off_mtrl_animation.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\429fb715fcc7711d4ab133e350b6f531\\core-1.3.0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\ee9b51f71825564f346013ea1d4d0318\\jetified-appcompat-resources-1.2.0\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_off_to_on_mtrl_animation.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_radio_off_to_on_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_off_mtrl.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\btn_radio_off_mtrl.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\feedback_shape_orange.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\drawable\\feedback_shape_orange.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\skystone_background.webp",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\drawable\\skystone_background.webp"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\drawable\\abc_textfield_search_material.xml"
+    }
+]

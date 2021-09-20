@@ -1,0 +1,126 @@
+[
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_darth_vader.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_darth_vader.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_light_speed.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_light_speed.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_mf_fail.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_mf_fail.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\color_fragment_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\color_fragment_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_light_saber_short.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_light_saber_short.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\chimedisconnect.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\chimedisconnect.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_light_saber.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_light_saber.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_fly_by.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_fly_by.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_laser.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_laser.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\cube_mesh_vertex_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\cube_mesh_vertex_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_roger_roger.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_roger_roger.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_laser_burst.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_laser_burst.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_wookie.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_wookie.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\warningmessage.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\warningmessage.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\texture_vertex_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\texture_vertex_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_siren.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_siren.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\simple_vertex_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\simple_vertex_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\gold.wav",
+        "source": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\src\\main\\res\\raw\\gold.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\cube_mesh_fragment_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\cube_mesh_fragment_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\texture_fragment_shader.glsl",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\raw\\texture_fragment_shader.glsl"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_power_up.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_power_up.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_mine.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_mine.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\errormessage.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\errormessage.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\nxtstartupsound.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\nxtstartupsound.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_bb8_down.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_bb8_down.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_alarm.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_alarm.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_r2d2_up.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_r2d2_up.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\silver.wav",
+        "source": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\src\\main\\res\\raw\\silver.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_bb8_up.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_bb8_up.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\ss_light_saber_long.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\ss_light_saber_long.wav"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\raw\\chimeconnect.wav",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\raw\\chimeconnect.wav"
+    }
+]

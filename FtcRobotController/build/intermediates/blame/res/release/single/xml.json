@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\pushbot.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\pushbot.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\teamwebcamcalibrations.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\xml\\teamwebcamcalibrations.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\builtinwebcamcalibrations.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\xml\\builtinwebcamcalibrations.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\k9legacybot.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\k9legacybot.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\ftc_about_activity_rc.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\ftc_about_activity_rc.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\pushbotsens.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\pushbotsens.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\k9usbbot.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\k9usbbot.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\device_filter.xml",
+        "source": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\src\\main\\res\\xml\\device_filter.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\maxmodules.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\maxmodules.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\app_settings.xml",
+        "source": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\src\\main\\res\\xml\\app_settings.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\ftc_about_activity.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\ftc_about_activity.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\rev_scoot.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\rev_scoot.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\advanced_rc_settings.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\advanced_rc_settings.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\file_provider_paths.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\9e00cc92e205f78ead532c1992a4d0cd\\jetified-RobotCore-6.2.1\\res\\xml\\file_provider_paths.xml"
+    },
+    {
+        "merged": "C:\\Hrishi\\FTC\\2021-22 Season\\FrieghtFrenzy\\FtcRobotController\\build\\intermediates\\res\\merged\\release\\xml\\squarebot.xml",
+        "source": "C:\\Users\\212027833\\.gradle\\caches\\transforms-2\\files-2.1\\98acefa3b00d15a6f24ce080e6180bd2\\jetified-FtcCommon-6.2.1\\res\\xml\\squarebot.xml"
+    }
+]

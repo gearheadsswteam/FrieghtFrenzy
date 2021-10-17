@@ -5,6 +5,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
 
 
 /**
@@ -34,6 +39,24 @@ public class GearheadsMecanumRobotRR {
     //Gyro
     public BNO055IMU imu;
 
+    //servo used to raise capstone arm
+    private Servo liftServo;
+
+    //Servo used to grab the capstone
+    private Servo grabServo;
+
+    // Motor used for the intake system
+    private DcMotor intakeMotor;
+
+    //The Motor to lift the Elevator
+    private DcMotor liftElevator;
+
+    //Servo to tilt the bucket
+    private Servo tiltBucket;
+
+    public CapstoneArmSystem capstoneArmSystem;
+    public Intakesystem intakesystem;
+    public DeliveryArmSystem deliveryArmSystem;
 
     private LinearOpMode curOpMode = null;   //current opmode
 
@@ -106,6 +129,45 @@ public class GearheadsMecanumRobotRR {
         rl_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
+    /**
+     * Initialize Capstone Arm System
+     */
+    private void initCapstoneArmSystem() {
+
+        //read hardware
+        liftServo = hwMap.servo.get("liftServo");
+        grabServo = hwMap.servo.get("grabServo");
+
+        capstoneArmSystem = new CapstoneArmSystem(liftServo, grabServo);
+
+        capstoneArmSystem.initialize();
+    }
+
+    /**
+     * Initialize Capstone Arm System
+     */
+    private void initIntakeSystem() {
+
+        //read hardware
+        intakeMotor = hwMap.dcMotor.get("intakeMotor");
+
+        intakesystem = new Intakesystem(intakeMotor);
+
+        intakesystem.initialize();
+
+    }
+
+    private void initDeliveryArmSystem() {
+
+        liftElevator = hwMap.dcMotor.get("liftElevator");
+        tiltBucket = hwMap.servo.get("tiltBucket");
+
+        deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket);
+
+        deliveryArmSystem.initialize();
+
+
+    }
 
     /* Initialize standard Hardware interfaces */
     public void initTeleopRR(HardwareMap ahwMap) {
@@ -129,6 +191,11 @@ public class GearheadsMecanumRobotRR {
     private void init(HardwareMap ahwMap) {
         // Save reference to Hardware map
         hwMap = ahwMap;
+
+        initDriveMotors();
+        initCapstoneArmSystem();
+        initIntakeSystem();
+        initDeliveryArmSystem();
     }
 }
 

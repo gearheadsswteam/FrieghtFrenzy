@@ -56,6 +56,12 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
             //Move The robot
             moveRobot();
 
+            operateIntake();
+
+            operateCapstoneArm();
+
+            operateDelivery();
+
         }
     }
 
@@ -129,8 +135,18 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
         turn = turn * (1 - speedDamper);
     }
 
+    private void operateIntake(){
+        robot.intakesystem.startInTake();
+    }
 
-
+    private void operateDelivery(){
+        robot.deliveryArmSystem.setElevatorHigh();
+        robot.deliveryArmSystem.tiltBucket();
+    }
+    private void operateCapstoneArm(){
+        robot.capstoneArmSystem.grabCapstone();
+        robot.capstoneArmSystem.liftArm();
+    }
     /**
      * Drive the robot
      */

@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.DuckrotationSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
 
 
@@ -54,9 +55,12 @@ public class GearheadsMecanumRobotRR {
     //Servo to tilt the bucket
     private Servo tiltBucket;
 
+    private Servo duckServo;
+
     public CapstoneArmSystem capstoneArmSystem;
     public Intakesystem intakesystem;
     public DeliveryArmSystem deliveryArmSystem;
+    public DuckrotationSystem duckrotationSystem;
 
     private LinearOpMode curOpMode = null;   //current opmode
 
@@ -156,6 +160,21 @@ public class GearheadsMecanumRobotRR {
         intakesystem.initialize();
 
     }
+
+    /**
+     * Initialize Capstone Arm System
+     */
+    private void initDuckRotationystem() {
+
+        //read hardware
+        duckServo = hwMap.servo.get("duckServo");
+
+        duckrotationSystem = new DuckrotationSystem(duckServo);
+
+        duckrotationSystem.initialize();
+
+    }
+
 
     private void initDeliveryArmSystem() {
 

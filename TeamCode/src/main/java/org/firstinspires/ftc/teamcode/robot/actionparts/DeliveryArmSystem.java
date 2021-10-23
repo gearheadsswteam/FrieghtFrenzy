@@ -17,6 +17,15 @@ public class DeliveryArmSystem {
     private final double UNTILT_BUCKET = 0.55;
 
 
+    //sample position values
+    //todo change these values
+
+    private final int ELEVATOR_POSITION_LOW = 0;
+    private final int ELEVATOR_POSITION_MED = 1440;
+    private final int ELEVATOR_POSITION_HIGH = 2*1440;
+
+
+
     /**
      * Constructor
      * @param liftElevator
@@ -33,37 +42,33 @@ public class DeliveryArmSystem {
 
     public void initialize(){
         liftElevator.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        setLiftElevatorLow();
     }
 
+    public void setLiftElevatorLow () {
+        setElevatorHeight(this.ELEVATOR_POSITION_LOW);
+    }
+
+    public void setLiftElevatorMedium () {
+        setElevatorHeight(this.ELEVATOR_POSITION_MED);
+    }
+
+    public void setLiftElevatorHigh () {
+        setElevatorHeight(this.ELEVATOR_POSITION_HIGH);
+    }
     /**
      * setting the delivery arms position
      */
     private void setElevatorHeight(int elevatorHeight){
-        //liftElevator.setTargetPosition(elevatorHeight);
-        liftElevator.setPower(0.5);
+        liftElevator.setTargetPosition(elevatorHeight);
+        // Turn On RUN_TO_POSITION
+        liftElevator.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        liftElevator.setPower(Math.abs(0.5));
     }
 
-    /**
-     * position is in the low setting
-     */
-    public void setElevatorLow() {
-        setElevatorHeight(1);
 
-    }
 
-    /**
-     * position is in the medium setting
-     */
-    public void setElevatorMedium() {
-        setElevatorHeight(2);
-    }
 
-    /**
-     * position is in the high setting
-     */
-    public void setElevatorHigh() {
-        setElevatorHeight(3);
-    }
 
 
     public void tiltBucket() {tiltBucket.setPosition(TILT_BUCKET);

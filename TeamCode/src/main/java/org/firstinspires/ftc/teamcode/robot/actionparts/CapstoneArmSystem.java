@@ -14,8 +14,8 @@ public class CapstoneArmSystem {
     //todo change positions
     private final double UP_POSITION = 0.56;
     private final double DOWN_POSITION = 0.41;
-    private final double CLOSED_POSITION = 0.22;
-    private final double OPEN_POSITION = 0.55;
+    private final double CLOSED_POSITION = 0.0;
+    private final double OPEN_POSITION = 0.5;
 
 
     /**

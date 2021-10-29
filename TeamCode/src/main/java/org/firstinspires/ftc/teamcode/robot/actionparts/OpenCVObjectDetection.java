@@ -31,9 +31,10 @@ public class OpenCVObjectDetection {
     double lowerruntime = 0;
     double upperruntime = 0;
 
-    // Pink Range                                      Y      Cr     Cb
-    public static Scalar scalarLowerYCrCb = new Scalar(0.0, 150.0, 120.0);
-    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 255.0, 255.0);
+    // Yellow Range                                      Y      Cr     Cb
+    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 130, 0);
+    public static Scalar scalarUpperYCrCb = new Scalar(255.0, 190.0, 100.0);
+
 
     private ContourPipeline myPipeline;
     private OpMode opMode;

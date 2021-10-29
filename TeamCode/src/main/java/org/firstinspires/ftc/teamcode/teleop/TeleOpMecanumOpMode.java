@@ -22,15 +22,13 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
     private GearheadsMecanumRobotRR robot;   // Use gearheads robot hardware
 
 
-
-
     private MecanumDrive mecanum;
     private BNO055IMU gyro;
 
     private double turn;
     private double forwardPower;
     private double sidePower;
-    private boolean capStoneGrabed=false;
+    private boolean capStoneGrabed = false;
 
 
     /**
@@ -53,18 +51,16 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
 
             dampenSpeed();
             //Move The robot
-            //moveRobot();
+            moveRobot();
 
             //operateIntake();
 
-            operateCapstoneArm();
+           // operateCapstoneArm();
 
             //operateDelivery();
 
         }
     }
-
-
 
 
     /**
@@ -134,26 +130,27 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
         turn = turn * (1 - speedDamper);
     }
 
-    private void operateIntake(){
-        if(gamepad1.a) {
+    private void operateIntake() {
+        if (gamepad1.a) {
             robot.intakesystem.startInTake();
-        }else if(gamepad1.b) {
+        } else if (gamepad1.b) {
             robot.intakesystem.stopInTake();
-        }else if(gamepad1.x) {
+        } else if (gamepad1.x) {
             robot.intakesystem.startReverseInTake();
         }
     }
 
-    private void operateDelivery(){
+    private void operateDelivery() {
         if (gamepad2.x) {
             robot.deliveryArmSystem.setLiftElevatorLow();
-        }else if (gamepad2.a) {
+        } else if (gamepad2.a) {
             robot.deliveryArmSystem.setLiftElevatorMedium();
-        }else if (gamepad2.b) {
+        } else if (gamepad2.b) {
             robot.deliveryArmSystem.setLiftElevatorHigh();
         }
     }
-    private void operateCapstoneArm(){
+
+    private void operateCapstoneArm() {
         if (gamepad1.y) {
             if (!capStoneGrabed) {
                 robot.capstoneArmSystem.grabCapstone();
@@ -163,7 +160,15 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
                 capStoneGrabed = false;
             }
         }
+
+        if (gamepad1.a) {
+            robot.capstoneArmSystem.resetArm();
+        } else if (gamepad1.a) {
+            robot.capstoneArmSystem.liftArm();
+        }
     }
+
+
 
     /**
      * Drive the robot

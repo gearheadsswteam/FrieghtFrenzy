@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneDetector;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DuckrotationSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
@@ -66,6 +67,8 @@ public class GearheadsMecanumRobotRR {
 
     /* local OpMode members. */
     public HardwareMap hwMap = null;
+
+    public CapstoneDetector capstoneDetector;
 
     /* Constructor */
     public GearheadsMecanumRobotRR(LinearOpMode opMode) {
@@ -184,8 +187,11 @@ public class GearheadsMecanumRobotRR {
         deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket);
 
         deliveryArmSystem.initialize();
+    }
 
-
+    private void initCapstoneDetector(){
+        capstoneDetector = new CapstoneDetector();
+        capstoneDetector.intitalize(curOpMode);
     }
 
     /* Initialize standard Hardware interfaces */
@@ -215,6 +221,7 @@ public class GearheadsMecanumRobotRR {
         initCapstoneArmSystem();
         initIntakeSystem();
         initDeliveryArmSystem();
+        //initCapstoneDetector();
     }
 }
 

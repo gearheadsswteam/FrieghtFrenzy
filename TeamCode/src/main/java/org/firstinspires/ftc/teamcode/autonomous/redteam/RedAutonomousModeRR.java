@@ -11,7 +11,7 @@ public class RedAutonomousModeRR extends AbstractAutonomousOpModeRR {
     int ringNum;
 
     Pose2d initPos = new Pose2d(-60, -48, 0);
-    CapstoneDetector capstoneDetector = new CapstoneDetector();
+    CapstoneDetector capstoneDetector;
 
     public RedAutonomousModeRR() {
         super.TEAM_TYPE = AbstractAutonomousOpModeRR.RED_TEAM;
@@ -21,7 +21,8 @@ public class RedAutonomousModeRR extends AbstractAutonomousOpModeRR {
     protected void initOpModeBeforeStart() {
         super.initOpModeBeforeStart();
         mecanumDriveRR.setPoseEstimate(initPos);
-
+        capstoneDetector = this.robot.capstoneDetector;
+        //capstoneDetector.intitalize(this);
         String capstonePosition = capstoneDetector.getPosition();
 
         telemetry.addData("Capstone postion ", capstonePosition);

@@ -221,7 +221,7 @@ public class GearheadsMecanumRobotRR {
         initCapstoneArmSystem();
         initIntakeSystem();
         initDeliveryArmSystem();
-        //initCapstoneDetector();
+        initCapstoneDetector();
     }
 }
 

@@ -1,14 +1,15 @@
-package org.firstinspires.ftc.teamcode.autonomous.redteam;
+package org.firstinspires.ftc.teamcode.autonomous.redteam.leftStart;
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.autonomous.AbstractAutonomousOpModeRR;
+import org.firstinspires.ftc.teamcode.autonomous.redteam.RedTeamPositions;
 
-@Autonomous(name = "RedNoMove", group = "Red")
+@Autonomous(name = "RedNoMoveLeft", group = "Red")
 public class RedNoMove extends AbstractAutonomousOpModeRR {
-    private Pose2d initPos = RedTeamPositions.WG2_START_POS;
-    private Pose2d destPos = RedTeamPositions.SHOOTING_POS;
+    private Pose2d initPos = RedTeamPositions.INIT_POSTION_LEFT;
+
     private long delayMs = 5000;
 
     public RedNoMove() {

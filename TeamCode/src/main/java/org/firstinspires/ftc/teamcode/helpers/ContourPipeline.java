@@ -27,7 +27,7 @@ public class ContourPipeline extends OpenCvPipeline {
 
 
     //Yellow color
-    public static Scalar scalarLowerYCrCb = new Scalar(  0.0, 130, 0);
+    public static Scalar scalarLowerYCrCb = new Scalar(0.0, 130, 0);
     public static Scalar scalarUpperYCrCb = new Scalar(255.0, 190.0, 100.0);
 
 
@@ -47,9 +47,6 @@ public class ContourPipeline extends OpenCvPipeline {
 
     private int loopcounter = 0;
     private int ploopcounter = 0;
-
-    private Mat mat = new Mat();
-    private Mat processed = new Mat();
 
     private Rect maxRect = new Rect();
 
@@ -84,6 +81,9 @@ public class ContourPipeline extends OpenCvPipeline {
     @Override
     public Mat processFrame(Mat input) {
         Mat output = input.clone();
+        Mat mat = new Mat();
+        Mat processed = new Mat();
+
         try {
             // Process Image
             Imgproc.cvtColor(input, mat, Imgproc.COLOR_RGB2YCrCb);
@@ -101,7 +101,7 @@ public class ContourPipeline extends OpenCvPipeline {
 
             // Draw Contours
             Imgproc.drawContours(output, contours, -1, new Scalar(255, 0, 0));
-         //   Core.inRange(mat, scalarLowerYCrCb, scalarUpperYCrCb, output);
+            //   Core.inRange(mat, scalarLowerYCrCb, scalarUpperYCrCb, output);
 
             // Loop Through Contours
             for (MatOfPoint contour : contours) {
@@ -146,9 +146,10 @@ public class ContourPipeline extends OpenCvPipeline {
             debug = e;
             error = true;
         }
-
-        return output;
+        output.release();
+        return input;
     }
+
 
     public int getRectHeight() {
         return maxRect.height;

@@ -11,7 +11,7 @@ public class RedTeamPositions {
     public static final Pose2d INIT_POSTION_LEFT = new Pose2d(-36, -60, Math.toRadians(90));
     public static final Pose2d RED_SHIPPING_HUB = new Pose2d(-12-8, -24+6, Math.toRadians(45));;
     public static final Pose2d PARK_ONLY_POSITION = new Pose2d(4.21-12, -36.82, 0);
-    public static final Pose2d RED_CAROUSEL = new Pose2d(-60, -60, 0);
+    public static final Pose2d RED_CAROUSEL = new Pose2d(-60, -48, Math.toRadians(90));
 
 
     public static final Pose2d INIT_POSTION_RIGHT = PoseStorage.DEFAULT_AUTONOMOUS_INIT_POSITION;

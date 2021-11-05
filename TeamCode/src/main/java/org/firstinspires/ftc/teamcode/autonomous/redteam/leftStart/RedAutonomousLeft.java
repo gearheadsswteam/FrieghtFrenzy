@@ -5,6 +5,7 @@ import com.acmerobotics.roadrunner.geometry.Vector2d;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
+import org.firstinspires.ftc.teamcode.autonomous.AutonomousHelper;
 import org.firstinspires.ftc.teamcode.autonomous.redteam.RedTeamPositions;
 import org.firstinspires.ftc.teamcode.drive.MecanumDriveRR;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
@@ -13,7 +14,7 @@ import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DuckrotationSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
 
-class RedAutonomousLeftOpMode {
+class RedAutonomousLeft {
 
     private MecanumDriveRR mecanumDriveRR;
     private LinearOpMode currOpMode;
@@ -24,7 +25,7 @@ class RedAutonomousLeftOpMode {
     DuckrotationSystem duckrotationSystem;
     Intakesystem intakesystem;
 
-    public RedAutonomousLeftOpMode(MecanumDriveRR mecanumDriveRR, GearheadsMecanumRobotRR gearheadsMecanumRobotRR, LinearOpMode currOpMode) {
+    public RedAutonomousLeft(MecanumDriveRR mecanumDriveRR, GearheadsMecanumRobotRR gearheadsMecanumRobotRR, LinearOpMode currOpMode) {
         this.mecanumDriveRR = mecanumDriveRR;
         this.currOpMode = currOpMode;
         this.initPos = RedTeamPositions.INIT_POSTION_LEFT;
@@ -45,13 +46,19 @@ class RedAutonomousLeftOpMode {
     public void executeOpMode() {
 
         //From Starting position to Case 0 drop zone
-        Trajectory traj1 = mecanumDriveRR.trajectoryBuilder(initPos, 0)
-                .splineTo(new Vector2d(4.97 - 3, -59.69), 5.6)
+        Trajectory traj1 = mecanumDriveRR.trajectoryBuilder(initPos, Math.toRadians(90))
+                .splineTo(AutonomousHelper.getVector2d(RedTeamPositions.RED_SHIPPING_HUB),Math.toRadians(90))
                 .build();
 
         mecanumDriveRR.followTrajectory(traj1);
 
+        currOpMode.sleep(3000);
 
+        Trajectory traj2= mecanumDriveRR.trajectoryBuilder(traj1.end(), true)
+                .splineTo(AutonomousHelper.getVector2d(RedTeamPositions.RED_CAROUSEL),RedTeamPositions.RED_CAROUSEL.getHeading())
+                .build();
+
+        mecanumDriveRR.followTrajectory(traj2);
     }
 
     protected void startIntake(){

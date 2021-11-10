@@ -9,7 +9,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
-import org.firstinspires.ftc.teamcode.robot.drivetrain.mecanum.MecanumDrive;
+import org.firstinspires.ftc.teamcode.robot.mecanum.MecanumDrive;
 
 
 @TeleOp(name = "Mecanum TeleOp Mode", group = "Mecanum")
@@ -28,7 +28,9 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
     private double turn;
     private double forwardPower;
     private double sidePower;
-    private boolean capStoneGrabed = false;
+
+    private boolean capstoneArmTriggerUp = true;
+    private int capstoneArmState = 0;
 
 
     /**
@@ -52,13 +54,10 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
             dampenSpeed();
             //Move The robot
             moveRobot();
-
-            //operateIntake();
-
-           // operateCapstoneArm();
-
-            //operateDelivery();
-
+            operateIntake();
+            operateDuckSpinner();
+            operateCapstoneArm();
+            operateDelivery();
         }
     }
 
@@ -103,16 +102,14 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
      */
     private void adjustForFOV() {
 
-
         double angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle;
-
 
         double tempForwardPower = gamepad1.left_stick_y;
         double tempSidePower = gamepad1.left_stick_x;
 
         sidePower = tempForwardPower * Math.cos(angle) + tempSidePower * Math.sin(angle);
         forwardPower = -tempForwardPower * Math.sin(angle) + tempSidePower * Math.cos(angle);
-        turn = gamepad1.right_stick_x;
+        turn = -gamepad1.right_stick_x;
     }
 
     /**
@@ -131,12 +128,16 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
     }
 
     private void operateIntake() {
-        if (gamepad1.a) {
+        if (gamepad1.a && !robot.cargoDetector.isCargobucketFull()) {
+       // if (gamepad1.a) {
             robot.intakesystem.startInTake();
         } else if (gamepad1.b) {
             robot.intakesystem.stopInTake();
         } else if (gamepad1.x) {
             robot.intakesystem.startReverseInTake();
+        }
+        if (robot.cargoDetector.isCargobucketFull()) {
+            robot.intakesystem.stopInTake();
         }
     }
 
@@ -148,26 +149,31 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
         } else if (gamepad2.b) {
             robot.deliveryArmSystem.setLiftElevatorHigh();
         }
+
+        if (gamepad2.y) {
+            robot.deliveryArmSystem.moveBucket();
+        }
+    }
+
+    private void operateDuckSpinner() {
+        if (gamepad2.right_trigger > 0.1) {
+            robot.duckrotationSystem.rotateClockWise();
+        } else if (gamepad2.left_trigger > 0.1) {
+            robot.duckrotationSystem.rotateAntiClockWise();
+        } else {
+            robot.duckrotationSystem.stop();
+        }
     }
 
     private void operateCapstoneArm() {
-        if (gamepad1.y) {
-            if (!capStoneGrabed) {
-                robot.capstoneArmSystem.grabCapstone();
-                capStoneGrabed = true;
-            } else if (capStoneGrabed) {
-                robot.capstoneArmSystem.ungrabCapstone();
-                capStoneGrabed = false;
-            }
+        if (gamepad1.y && capstoneArmTriggerUp) {
+            capstoneArmState = (capstoneArmState + 1) % 4;
+            capstoneArmTriggerUp = false;
+        } else if (!gamepad1.y) {
+            capstoneArmTriggerUp = true;
         }
-
-        if (gamepad1.a) {
-            robot.capstoneArmSystem.resetArm();
-        } else if (gamepad1.a) {
-            robot.capstoneArmSystem.liftArm();
-        }
+        robot.capstoneArmSystem.moveCapstoneArm(capstoneArmState);
     }
-
 
 
     /**

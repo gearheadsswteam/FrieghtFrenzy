@@ -16,6 +16,6 @@ public class CapstoneDetector {
     }
 
     public String getPosition(){
-        return objectDetector.getObjectDetectionState();
+       return objectDetector.getObjectDetectionState();
     }
 }

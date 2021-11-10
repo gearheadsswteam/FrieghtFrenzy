@@ -11,15 +11,15 @@ public class CapstoneArmSystem {
     private Servo grabServo;
 
     //Servo Positions
-    //todo change positions
-    private final double UP_POSITION = 0.56;
-    private final double DOWN_POSITION = 0.41;
-    private final double CLOSED_POSITION = 0.0;
-    private final double OPEN_POSITION = 0.5;
+    private final double UP_POSITION = 0.0;
+    private final double DOWN_POSITION = 1.0;
+    private final double CLOSED_POSITION = 0.6;
+    private final double OPEN_POSITION = 0.47;
 
 
     /**
      * Constructor
+     *
      * @param liftServo
      * @param grabServo
      */
@@ -31,8 +31,9 @@ public class CapstoneArmSystem {
     /**
      * Initialize the Capstone System
      */
-    public void initialize(){
-
+    public void initialize() {
+        ungrabCapstone();
+        armUp();
     }
 
     /**
@@ -53,21 +54,40 @@ public class CapstoneArmSystem {
      * Lifts the wobble goal post
      */
 
-    public void liftArm() {
+    public void armUp() {
         liftServo.setPosition(UP_POSITION);
     }
 
     /**
      * Sets the wobble goal post down
      */
-    public void resetArm() {
+    public void armDown() {
         liftServo.setPosition(DOWN_POSITION);
     }
 
-    /**
-     * The position to move the arm to
-     *
-     * @param leftArmState
-     */
 
+    public void moveCapstoneArm(int capstonearmState) {
+
+        switch (capstonearmState) {
+            case 0:
+                ungrabCapstone();
+                armUp();
+                break;
+
+            case 1:
+                ungrabCapstone();
+                armDown();
+                break;
+
+            case 2:
+                grabCapstone();
+                armDown();
+                break;
+
+            case 3:
+                grabCapstone();
+                armUp();
+                break;
+        }
+    }
 }

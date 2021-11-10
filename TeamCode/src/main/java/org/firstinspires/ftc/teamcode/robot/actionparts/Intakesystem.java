@@ -12,7 +12,7 @@ public class Intakesystem {
     /**
      * Constructor
      * @param intakeMotor
-     */
+ */
     public Intakesystem(DcMotor intakeMotor) {
         this.intakeMotor = intakeMotor;
     }

@@ -11,18 +11,18 @@ public class DeliveryArmSystem {
     //Servo to tilt the bucket
     private Servo tiltBucket;
 
+    private boolean isTilted = false;
+
     //Servo Positions
-    //todo change positions
-    private final double TILT_BUCKET = 0.22;
-    private final double UNTILT_BUCKET = 0.55;
+    private final double TILT_BUCKET = 0.83;
+    private final double UNTILT_BUCKET = 0.36;
 
 
-    //sample position values
-    //todo change these values
+    //position values
 
     private final int ELEVATOR_POSITION_LOW = 0;
-    private final int ELEVATOR_POSITION_MED = 1440;
-    private final int ELEVATOR_POSITION_HIGH = 2*1440;
+    private final int ELEVATOR_POSITION_MED = -361;
+    private final int ELEVATOR_POSITION_HIGH = -918;
 
 
 
@@ -66,19 +66,34 @@ public class DeliveryArmSystem {
         liftElevator.setPower(Math.abs(0.5));
     }
 
+    boolean bucketMoveComplete = true;
 
+    public void moveBucket() {
+        if(bucketMoveComplete) {
+            bucketMoveComplete = false;
+            if (isTilted) {
+                unTiltBucket();
+            } else {
+                tiltBucket();
+            }
+            bucketMoveComplete = true;
+        }
+    }
 
-
-
-
-    public void tiltBucket() {tiltBucket.setPosition(TILT_BUCKET);
+    public void tiltBucket() {
+        if(!isTilted) {
+            tiltBucket.setPosition(TILT_BUCKET);
+            isTilted = true;
+        }
     }
 
     /**
      * Untilts
      */
-    public void unTiltBucket() { tiltBucket.setPosition(UNTILT_BUCKET);
+    public void unTiltBucket() {
+        if(isTilted) {
+            tiltBucket.setPosition(UNTILT_BUCKET);
+            isTilted = false;
+        }
     }
-
-
 }

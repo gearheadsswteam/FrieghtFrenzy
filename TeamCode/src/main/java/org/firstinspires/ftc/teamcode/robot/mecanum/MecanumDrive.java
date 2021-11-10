@@ -2,10 +2,12 @@ package org.firstinspires.ftc.teamcode.robot.mecanum;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
+import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
 
 public class MecanumDrive {
 
@@ -23,7 +25,7 @@ public class MecanumDrive {
         this.fr_motor = fr_motor;
         this.rl_motor = rl_motor;
         this.rr_motor = rr_motor;
-    }
+  }
 
     public MecanumDrive(DcMotor fl_motor, DcMotor fr_motor, DcMotor rl_motor, DcMotor rr_motor, BNO055IMU gyro) {
         this.fl_motor = fl_motor;
@@ -32,7 +34,15 @@ public class MecanumDrive {
         this.rr_motor = rr_motor;
         this.gyro = gyro;
         //this.gyro.calibrate(); //Not sure if this is needed
-    }
+  }
+
+  public MecanumDrive (GearheadsMecanumRobotRR gearheadsMecanumRobotRR){
+    this.fl_motor = gearheadsMecanumRobotRR.fl_motor;
+    this.fr_motor = gearheadsMecanumRobotRR.fr_motor;
+    this.rl_motor = gearheadsMecanumRobotRR.rl_motor;
+    this.rr_motor = gearheadsMecanumRobotRR.rr_motor;
+    this.gyro = gearheadsMecanumRobotRR.imu;
+  }
 
     public void move(double x, double y, double rotation) {
         this.x = x;
@@ -40,7 +50,7 @@ public class MecanumDrive {
         this.rotation = rotation;
         dataString = "\nx: " + x + "\n y: " + y + "\n rot: " + rotation;
         doit();
-    }
+  }
 
     public void stopRobot() {
         fl_motor.setPower(0);
@@ -52,13 +62,13 @@ public class MecanumDrive {
     private void angleRotation(int angle) {
         if (gyro == null) {
             return;
-        }
+  }
 
         //Converts to values between 0 and 359 to match modernrobotics gyro
         angle = angle % 360;
         if (angle < 0) {
             angle = 360 + angle;
-        }
+    }
 
         int heading = (int) gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle;
         int dist = angle - heading; //ASSUMES: rotation clockwise is positive
@@ -69,14 +79,14 @@ public class MecanumDrive {
                 dist = 360 + dist;
             } else if (dist > 0) {
                 dist = 360 - dist;
-            }
-        }
+    }
+  }
 
         if (Math.abs(dist) > 1) {
             rotation = dist * angleConstant; //Proportional
             rotation = Math.max(Math.min(rotation, angleMax), -angleMax); //Floor and ceiling
-        }
     }
+  }
 
     private boolean onAngle(int angle) {
         int heading = (int) gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle;
@@ -93,14 +103,14 @@ public class MecanumDrive {
         rr_motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
         setRunUsingEncoderMode();
-    }
+  }
 
     public void setRunUsingEncoderMode() {
         fl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         fr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-    }
+      }
 
     public String getDataString() {
         return dataString;
@@ -123,7 +133,7 @@ public class MecanumDrive {
             fr_speed /= max;
             rl_speed /= max;
             rr_speed /= max;
-        }
+    }
 
         fl_motor.setPower(fl_speed);
         fr_motor.setPower(fr_speed);
@@ -137,4 +147,4 @@ public class MecanumDrive {
         y = 0;
         rotation = 0;
     }
-}
+  }

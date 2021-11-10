@@ -2,16 +2,19 @@ package org.firstinspires.ftc.teamcode.robot;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneDetector;
+import org.firstinspires.ftc.teamcode.robot.actionparts.CargoDetector;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DuckrotationSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.OdoRetract;
 
 
 /**
@@ -56,12 +59,23 @@ public class GearheadsMecanumRobotRR {
     //Servo to tilt the bucket
     private Servo tiltBucket;
 
-    private Servo duckServo;
+    private CRServo duckServo;
+
+    private Servo x;
+
+    private Servo y;
+
+    private Servo z;
+
+
+    private ColorSensor sensorColor;
 
     public CapstoneArmSystem capstoneArmSystem;
     public Intakesystem intakesystem;
     public DeliveryArmSystem deliveryArmSystem;
     public DuckrotationSystem duckrotationSystem;
+    public CargoDetector cargoDetector;
+    public OdoRetract odoRetract;
 
     private LinearOpMode curOpMode = null;   //current opmode
 
@@ -69,6 +83,7 @@ public class GearheadsMecanumRobotRR {
     public HardwareMap hwMap = null;
 
     public CapstoneDetector capstoneDetector;
+
 
     /* Constructor */
     public GearheadsMecanumRobotRR(LinearOpMode opMode) {
@@ -134,6 +149,12 @@ public class GearheadsMecanumRobotRR {
         rr_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fl_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rl_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        fr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        fl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
     }
 
     /**
@@ -170,7 +191,7 @@ public class GearheadsMecanumRobotRR {
     private void initDuckRotationystem() {
 
         //read hardware
-        duckServo = hwMap.servo.get("duckServo");
+        duckServo = hwMap.crservo.get("duckServo");
 
         duckrotationSystem = new DuckrotationSystem(duckServo);
 
@@ -185,7 +206,6 @@ public class GearheadsMecanumRobotRR {
         tiltBucket = hwMap.servo.get("tiltBucket");
 
         deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket);
-
         deliveryArmSystem.initialize();
     }
 
@@ -194,16 +214,35 @@ public class GearheadsMecanumRobotRR {
         capstoneDetector.intitalize(curOpMode);
     }
 
+    private void initCargoDetector(){
+        // get a reference to the color sensor.
+        //sensorColor = hwMap.get(ColorSensor.class, "colorSensor");
+        cargoDetector = new CargoDetector(sensorColor,curOpMode);
+    }
+
+    public void initOdoRetract () {
+        x = hwMap.servo.get("x_odo");
+        y = hwMap.servo.get("y_odo");
+        z = hwMap.servo.get("z_odo");
+        odoRetract = new OdoRetract(x,y,z);
+        odoRetract.initialize();
+
+    }
+
+
+
     /* Initialize standard Hardware interfaces */
     public void initTeleopRR(HardwareMap ahwMap) {
         init(ahwMap);
         initGyro(true);
+        odoRetract.deactivateOdo();
     }
 
     /* Initialize standard Hardware interfaces */
     public void initAutonomous(HardwareMap ahwMap, String teamType) {
         init(ahwMap);
         initGyro(true);
+        odoRetract.activateOdo();
     }
 
     /* Initialize standard Hardware interfaces */
@@ -220,8 +259,11 @@ public class GearheadsMecanumRobotRR {
         initDriveMotors();
         initCapstoneArmSystem();
         initIntakeSystem();
+        initDuckRotationystem();
         initDeliveryArmSystem();
-        initCapstoneDetector();
+        initCargoDetector();
+        //initColorSensor();
+        //initCapstoneDetector();
     }
 }
 

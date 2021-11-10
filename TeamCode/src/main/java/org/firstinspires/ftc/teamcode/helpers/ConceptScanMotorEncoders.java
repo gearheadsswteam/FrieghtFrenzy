@@ -61,7 +61,7 @@ public class ConceptScanMotorEncoders extends LinearOpMode {
     @Override
     public void runOpMode() {
         DcMotor liftElevator = hardwareMap.dcMotor.get("liftElevator");
-        Servo tiltBucket = hardwareMap.servo.get("tiltBucket");
+        //Servo tiltBucket = hardwareMap.servo.get("tiltBucket");
 
        // DeliveryArmSystem deliveryArmSystem = new DeliveryArmSystem(liftElevator, tiltBucket);
         liftElevator.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -78,9 +78,9 @@ public class ConceptScanMotorEncoders extends LinearOpMode {
         while (opModeIsActive()) {
             // slew the servo, according to the rampUp (direction) variable.
             if (gamepad2.a) {
-                liftElevator.setPower(1);
+                liftElevator.setPower(0.5);
             } else if (gamepad2.b) {
-                liftElevator.setPower(-1);
+                liftElevator.setPower(-0.5);
             }
 
             if(!gamepad1.a && !gamepad1.b){

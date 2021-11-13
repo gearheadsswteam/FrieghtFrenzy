@@ -4,14 +4,18 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+
 public class CargoDetector {
     private final static double  SKYSTONE_COLOR_INDEX = 2;
     private ColorSensor colorSensor;
     private OpMode curOpMode;
+    private DistanceSensor disSensor;
 
 
-    public CargoDetector(ColorSensor sensorColor, OpMode opMode) {
+    public CargoDetector(ColorSensor sensorColor, DistanceSensor distanceSensor, OpMode opMode) {
         this.colorSensor = sensorColor;
+        this.disSensor = distanceSensor;
         this.curOpMode = opMode;
     }
 
@@ -22,6 +26,10 @@ public class CargoDetector {
             return true;
         }
         return false;
+    }
+
+    public double getCargoDistance(){
+        return disSensor.getDistance(DistanceUnit.MM);
     }
 
     private double getCCValue(ColorSensor colorSensor) {

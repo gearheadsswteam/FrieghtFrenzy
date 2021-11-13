@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
@@ -53,6 +54,8 @@ public class GearheadsMecanumRobotRR {
     // Motor used for the intake system
     private DcMotor intakeMotor;
 
+    private Servo intakeServo;
+
     //The Motor to lift the Elevator
     private DcMotor liftElevator;
 
@@ -69,6 +72,7 @@ public class GearheadsMecanumRobotRR {
 
 
     private ColorSensor sensorColor;
+    private DistanceSensor distanceSensor;
 
     public CapstoneArmSystem capstoneArmSystem;
     public Intakesystem intakesystem;
@@ -178,8 +182,12 @@ public class GearheadsMecanumRobotRR {
 
         //read hardware
         intakeMotor = hwMap.dcMotor.get("intakeMotor");
+        intakeServo = hwMap.servo.get("intakeServo");
 
-        intakesystem = new Intakesystem(intakeMotor);
+
+        intakesystem = new Intakesystem(intakeMotor, intakeServo);
+
+
 
         intakesystem.initialize();
 
@@ -205,7 +213,7 @@ public class GearheadsMecanumRobotRR {
         liftElevator = hwMap.dcMotor.get("liftElevator");
         tiltBucket = hwMap.servo.get("tiltBucket");
 
-        deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket);
+        deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket, curOpMode);
         deliveryArmSystem.initialize();
     }
 
@@ -217,7 +225,8 @@ public class GearheadsMecanumRobotRR {
     private void initCargoDetector(){
         // get a reference to the color sensor.
         //sensorColor = hwMap.get(ColorSensor.class, "colorSensor");
-        cargoDetector = new CargoDetector(sensorColor,curOpMode);
+        //distanceSensor = hwMap.get(DistanceSensor.class, "colorSensor");
+        cargoDetector = new CargoDetector(sensorColor,distanceSensor,curOpMode);
     }
 
     public void initOdoRetract () {

@@ -56,7 +56,7 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
             moveRobot();
             operateIntake();
             operateDuckSpinner();
-            operateCapstoneArm();
+            operateCapstoneArmTeleop();
             operateDelivery();
         }
     }
@@ -138,8 +138,13 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
         }
         if (robot.cargoDetector.isCargobucketFull()) {
             robot.intakesystem.stopInTake();
+            robot.intakesystem.startReverseInTake();
+        }
+        if (gamepad1.y) {
+            robot.intakesystem.toggleIntakeOpenClosePosition();
         }
     }
+
 
     private void operateDelivery() {
         if (gamepad2.x) {
@@ -173,6 +178,20 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
             capstoneArmTriggerUp = true;
         }
         robot.capstoneArmSystem.moveCapstoneArm(capstoneArmState);
+    }
+
+    private void operateCapstoneArmTeleop(){
+        float valueRecived =  gamepad2.left_stick_y;
+        float valueToSet = (float) (0.18 * (-valueRecived) + 0.61);
+        robot.capstoneArmSystem.setArmPositon(valueToSet);
+
+        if(gamepad2.right_bumper){
+            robot.capstoneArmSystem.grabCapstone();
+        }
+
+        if(gamepad2.left_bumper){
+            robot.capstoneArmSystem.ungrabCapstone();
+        }
     }
 
 

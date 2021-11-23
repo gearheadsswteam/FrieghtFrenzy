@@ -154,10 +154,10 @@ public class GearheadsMecanumRobotRR {
         fl_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rl_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        fr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rr_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        fl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        rl_motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        fr_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rr_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        fl_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rl_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
     }
 
@@ -224,9 +224,8 @@ public class GearheadsMecanumRobotRR {
 
     private void initCargoDetector(){
         // get a reference to the color sensor.
-        //sensorColor = hwMap.get(ColorSensor.class, "colorSensor");
-        //distanceSensor = hwMap.get(DistanceSensor.class, "colorSensor");
-        cargoDetector = new CargoDetector(sensorColor,distanceSensor,curOpMode);
+        distanceSensor = hwMap.get(DistanceSensor.class, "colorSensor");
+        cargoDetector = new CargoDetector(distanceSensor);
     }
 
     public void initOdoRetract () {

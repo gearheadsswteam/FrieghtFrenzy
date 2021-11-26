@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -144,10 +145,10 @@ public class GearheadsMecanumRobotRR {
 
 
         //This is based on how motors have been mounted
-        fr_motor.setDirection(DcMotor.Direction.FORWARD);
-        rr_motor.setDirection(DcMotor.Direction.FORWARD);
-        fl_motor.setDirection(DcMotor.Direction.REVERSE);
-        rl_motor.setDirection(DcMotor.Direction.REVERSE);// BL motor works inverted...not sure why
+        fr_motor.setDirection(DcMotor.Direction.REVERSE);
+        rr_motor.setDirection(DcMotor.Direction.REVERSE);
+        fl_motor.setDirection(DcMotor.Direction.FORWARD);
+        rl_motor.setDirection(DcMotor.Direction.FORWARD);// BL motor works inverted...not sure why
 
         fr_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rr_motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -167,8 +168,8 @@ public class GearheadsMecanumRobotRR {
     private void initCapstoneArmSystem() {
 
         //read hardware
-        liftServo = hwMap.servo.get("liftServo");
-        grabServo = hwMap.servo.get("grabServo");
+        liftServo = hwMap.servo.get("arm");
+        grabServo = hwMap.servo.get("claw");
 
         capstoneArmSystem = new CapstoneArmSystem(liftServo, grabServo);
 
@@ -181,8 +182,8 @@ public class GearheadsMecanumRobotRR {
     private void initIntakeSystem() {
 
         //read hardware
-        intakeMotor = hwMap.dcMotor.get("intakeMotor");
-        intakeServo = hwMap.servo.get("intakeServo");
+        intakeMotor = hwMap.dcMotor.get("intake");
+        intakeServo = hwMap.servo.get("gate");
 
 
         intakesystem = new Intakesystem(intakeMotor, intakeServo);
@@ -199,7 +200,7 @@ public class GearheadsMecanumRobotRR {
     private void initDuckRotationystem() {
 
         //read hardware
-        duckServo = hwMap.crservo.get("duckServo");
+        duckServo = hwMap.crservo.get("spinner");
 
         duckrotationSystem = new DuckrotationSystem(duckServo);
 
@@ -210,8 +211,8 @@ public class GearheadsMecanumRobotRR {
 
     private void initDeliveryArmSystem() {
 
-        liftElevator = hwMap.dcMotor.get("liftElevator");
-        tiltBucket = hwMap.servo.get("tiltBucket");
+        liftElevator = hwMap.dcMotor.get("lift");
+        tiltBucket = hwMap.servo.get("bucket");
 
         deliveryArmSystem = new DeliveryArmSystem (liftElevator , tiltBucket, curOpMode);
         deliveryArmSystem.initialize();
@@ -224,7 +225,7 @@ public class GearheadsMecanumRobotRR {
 
     private void initCargoDetector(){
         // get a reference to the color sensor.
-        distanceSensor = hwMap.get(DistanceSensor.class, "colorSensor");
+        distanceSensor = hwMap.get(DistanceSensor.class, "bucketSensor");
         cargoDetector = new CargoDetector(distanceSensor);
     }
 
@@ -250,7 +251,7 @@ public class GearheadsMecanumRobotRR {
     public void initAutonomous(HardwareMap ahwMap, String teamType) {
         init(ahwMap);
         initGyro(true);
-        odoRetract.activateOdo();
+        //odoRetract.activateOdo();
     }
 
     /* Initialize standard Hardware interfaces */
@@ -271,7 +272,7 @@ public class GearheadsMecanumRobotRR {
         initDeliveryArmSystem();
         initCargoDetector();
         //initColorSensor();
-        //initCapstoneDetector();
+        initCapstoneDetector();
     }
 }
 

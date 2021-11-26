@@ -8,9 +8,9 @@ import org.firstinspires.ftc.teamcode.autonomous.redteam.RedTeamPositions;
 
 @Autonomous(name = "RedAutonomousModeLeft", group = "Red")
 public class RedAutonomousModeLeftOpMode extends AbstractAutonomousOpModeRR {
-    int ringNum;
 
     private Pose2d initPos = RedTeamPositions.INIT_POSTION_LEFT;
+
     private String capstoneDetectorPosition;
 
     public RedAutonomousModeLeftOpMode() {
@@ -33,21 +33,20 @@ public class RedAutonomousModeLeftOpMode extends AbstractAutonomousOpModeRR {
 
     @Override
     protected void initOpModeAfterStart() {
-        //robot.initCapstoneDetector();
+
     }
 
     @Override
     protected void executeOpMode() {
-        while (this.opModeIsActive()) {
-            capstoneDetectorPosition = robot.capstoneDetector.getPosition();
-            telemetry.addData("Capstone position ", capstoneDetectorPosition);
-            telemetry.update();
-            sleep(1500);
-        }
+        capstoneDetectorPosition = robot.capstoneDetector.getPosition();
+        telemetry.addData("Capstone position ", capstoneDetectorPosition);
+        telemetry.update();
+        sleep(500);
 
-//        RedAutonomousLeft leftOpMode = new RedAutonomousLeft(mecanumDriveRR, autonomousRobotMover.robot, this);
-//        leftOpMode.setLastPos(initPos);
-//        leftOpMode.setCapStonePosition(capstoneDetectorPosition);
-//        leftOpMode.executeOpMode();
+
+        RedAutonomousLeft leftOpMode = new RedAutonomousLeft(mecanumDriveRR, autonomousMecanumMoverRR.robot, this);
+        leftOpMode.setLastPos(initPos);
+        leftOpMode.setCapStonePosition(capstoneDetectorPosition);
+        leftOpMode.executeOpMode();
     }
 }

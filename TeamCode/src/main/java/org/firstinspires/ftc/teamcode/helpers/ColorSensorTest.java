@@ -5,6 +5,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 
+import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+
 @Autonomous(name = "Color Sensor Test", group = "Test")
 public class ColorSensorTest extends LinearOpMode {
     /* local OpMode members. */
@@ -24,7 +26,10 @@ public class ColorSensorTest extends LinearOpMode {
          */
         // Connect to servo (Assume PushBot Left Hand)
         // Change the text in quotes to match any servo name on your robot.
-        colorSensor = hardwareMap.colorSensor.get("colorSensor");
+        colorSensor = hardwareMap.get(ColorSensor.class, "colorSensor");
+        // get a reference to the distance sensor that shares the same name.
+        sensorDistance = hardwareMap.get(DistanceSensor.class, "colorSensor");
+
         // Set the LED in the beginning
         colorSensor.enableLed(false);
 
@@ -44,6 +49,7 @@ public class ColorSensorTest extends LinearOpMode {
             telemetry.addData("Red ", colorSensor.red());
             telemetry.addData("Green", colorSensor.green());
             telemetry.addData("Blue ", colorSensor.blue());
+            telemetry.addData("Dist ", sensorDistance.getDistance(DistanceUnit.MM));
 //            telemetry.addData("CC ", getCCValue(colorSensor));
 
             telemetry.update();

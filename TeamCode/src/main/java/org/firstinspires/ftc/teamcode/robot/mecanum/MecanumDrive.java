@@ -143,6 +143,9 @@ public class MecanumDrive {
         //lastSpeeds = "fl: "+fl_speed+" fr: "+fr_speed+" rl: "+rl_speed+" rr: "+rr_speed;
         dataString = "x: " + x + " y: " + y + " rot: " + rotation;
 
+
+
+
         x = 0;
         y = 0;
         rotation = 0;

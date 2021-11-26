@@ -4,12 +4,12 @@ import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.acmerobotics.roadrunner.geometry.Vector2d;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 
-import org.firstinspires.ftc.teamcode.drive.MecanumDriveRR;
+import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 
 public class AutonomousHelper {
-    private MecanumDriveRR mecanumDriveRR;
+    private SampleMecanumDrive mecanumDriveRR;
 
-    public AutonomousHelper(MecanumDriveRR mecDrive){
+    public AutonomousHelper(SampleMecanumDrive mecDrive){
         mecanumDriveRR = mecDrive;
     }
 

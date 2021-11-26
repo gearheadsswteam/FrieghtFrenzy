@@ -48,6 +48,7 @@ public class OpenCVObjectDetection {
         webcam = OpenCvCameraFactory.getInstance().createWebcam(hardwareMap.get(WebcamName.class, "Webcam 1"), cameraMonitorViewId);
         //OpenCV Pipeline
 
+
         webcam.setPipeline(myPipeline = new ContourPipeline());
         // Configuration of Pipeline
         myPipeline.ConfigurePipeline(30, 30, 30, 30, CAMERA_WIDTH, CAMERA_HEIGHT);

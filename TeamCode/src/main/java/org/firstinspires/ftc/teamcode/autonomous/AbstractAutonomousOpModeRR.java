@@ -7,10 +7,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
-import org.firstinspires.ftc.teamcode.drive.MecanumDriveRR;
 import org.firstinspires.ftc.teamcode.drive.PoseStorage;
+import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
+import org.firstinspires.ftc.teamcode.robot.mecanum.AutonomousMecanumMover;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
 import org.firstinspires.ftc.teamcode.robot.mecanum.AutonomousMecanumMoverRR;
+import org.firstinspires.ftc.teamcode.robot.mecanum.MecanumDrive;
 
 
 @Autonomous(name = "Mecannum: AbstractAutonomousOpModeRR", group = "Mecannum")
@@ -30,11 +32,20 @@ public abstract class AbstractAutonomousOpModeRR extends LinearOpMode {
 
     // Use gearheads robot hardware
     public GearheadsMecanumRobotRR robot;
+
     //The drive system
-    public MecanumDriveRR mecanumDriveRR;
+    public SampleMecanumDrive mecanumDriveRR;
+
+
+    //The drive system
+    public MecanumDrive mecanumDrive;
 
     // The autonomous driving software
-    protected AutonomousMecanumMoverRR autonomousRobotMover;
+    protected AutonomousMecanumMoverRR autonomousMecanumMoverRR;
+
+    // The autonomous driving software without RoadRunner
+    protected AutonomousMecanumMover autonomousMecanumMover;
+
 
 
     /**
@@ -56,8 +67,11 @@ public abstract class AbstractAutonomousOpModeRR extends LinearOpMode {
         robot.initAutonomous(hardwareMap, TEAM_TYPE);
 
 
-        mecanumDriveRR = new MecanumDriveRR(hardwareMap);
-        autonomousRobotMover = new AutonomousMecanumMoverRR(robot, this, mecanumDriveRR);
+        mecanumDriveRR = new SampleMecanumDrive(hardwareMap);
+        mecanumDrive = new MecanumDrive(robot);
+        autonomousMecanumMoverRR = new AutonomousMecanumMoverRR(robot, this, mecanumDriveRR);
+        autonomousMecanumMover = new AutonomousMecanumMover(robot, this, mecanumDrive);
+
 
         telemetry.addData("Status", "Initialized " + TEAM_TYPE);
         telemetry.update();

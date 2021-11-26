@@ -5,11 +5,11 @@ import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.acmerobotics.roadrunner.trajectory.TrajectoryBuilder;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.drive.MecanumDriveRR;
+import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
 
 public class AutonomousMecanumMoverRR {
-    public MecanumDriveRR drive;
+    public SampleMecanumDrive drive;
     public GearheadsMecanumRobotRR robot = null;   // Use a Gearbot's hardware
     private LinearOpMode curOpMode = null;   //current opmode
 
@@ -19,7 +19,7 @@ public class AutonomousMecanumMoverRR {
      * @param gearheadsRobot robot to use
      * @param myOpMode       opmode that is executing
      */
-    public AutonomousMecanumMoverRR(GearheadsMecanumRobotRR gearheadsRobot, LinearOpMode myOpMode, MecanumDriveRR mecanumDrive) {
+    public AutonomousMecanumMoverRR(GearheadsMecanumRobotRR gearheadsRobot, LinearOpMode myOpMode, SampleMecanumDrive mecanumDrive) {
         robot = gearheadsRobot;
         curOpMode = myOpMode;
         drive = mecanumDrive;

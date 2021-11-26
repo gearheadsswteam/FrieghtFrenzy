@@ -11,14 +11,16 @@ public class Intakesystem {
     public DcMotor intakeMotor;
     public Servo intakeServo;
 
-    private double servoIntakeBlockPosition = 0.65;
-    private double servoIntakeOpenPosition = 0.31;
+    private double gateUp = 0.65;
+    private double gateDown = 0.31;
 
     private boolean intakeOpen = true;
+
     /**
      * Constructor
+     *
      * @param intakeMotor
- */
+     */
     public Intakesystem(DcMotor intakeMotor, Servo intakeServo) {
         this.intakeMotor = intakeMotor;
         this.intakeServo = intakeServo;
@@ -26,19 +28,29 @@ public class Intakesystem {
 
     public void toggleIntakeOpenClosePosition() {
         if (intakeOpen) {
-            intakeServo.setPosition(servoIntakeBlockPosition);
+            intakeServo.setPosition(gateUp);
             intakeOpen = false;
         } else {
-            intakeServo.setPosition(servoIntakeOpenPosition);
+            intakeServo.setPosition(gateDown);
             intakeOpen = true;
         }
+    }
+
+    public void intakeGateOpen() {
+        intakeServo.setPosition(gateDown);
+        intakeOpen = true;
+    }
+
+    public void intakeGateClosed() {
+        intakeServo.setPosition(gateUp);
+        intakeOpen = false;
     }
 
     /**
      * Initialize the system
      */
-    public void initialize(){
-        intakeServo.setPosition(servoIntakeBlockPosition);
+    public void initialize() {
+        intakeServo.setPosition(gateDown);
         intakeOpen = false;
     }
 
@@ -47,7 +59,7 @@ public class Intakesystem {
      */
     public void startInTake() {
         intakeMotor.setPower(-0.5);
-       // intakeServo.setPosition(servoIntakeBlockPosition);
+        // intakeServo.setPosition(servoIntakeBlockPosition);
     }
 
     /**

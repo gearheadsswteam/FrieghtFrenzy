@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.robot.actionparts;
 
 import com.qualcomm.robotcore.hardware.Servo;
 
+
 public class CapstoneArmSystem {
 
     //The Servo to lift the arm up and down
@@ -10,11 +11,15 @@ public class CapstoneArmSystem {
     //Servo used to grab the capstone
     private Servo grabServo;
 
-    //Servo Positions
-    private final double INIT_POSITON = 0.43;
-    private final double FLOOR_POSITION = 0.79;
-    private final double CLOSED_POSITION = 0.6;
-    private final double OPEN_POSITION = 0.47;
+    //Arm Positions
+    public static final double ARM_REST = 0.43;
+    private final double ARM_UP = 0.65;
+    private final double ARM_DOWN = 0.795;
+
+
+    //Claw position
+    private final double CLOSED_POSITION = 0.43;
+    private final double OPEN_POSITION = 0.08;
 
     private boolean isOpen = true;
 
@@ -33,7 +38,7 @@ public class CapstoneArmSystem {
      * Initialize the Capstone System
      */
     public void initialize() {
-        ungrabCapstone();
+        grabCapstone();
         armUp();
     }
 
@@ -58,17 +63,29 @@ public class CapstoneArmSystem {
      */
 
     public void armUp() {
-        liftServo.setPosition(INIT_POSITON);
+        liftServo.setPosition(ARM_REST);
     }
 
     /**
      * Sets the wobble goal post down
      */
     public void armDown() {
-        liftServo.setPosition(FLOOR_POSITION);
+        liftServo.setPosition(ARM_DOWN);
     }
 
 
+    /**
+     * Sets the wobble goal post down
+     */
+    public void armRest() {
+        liftServo.setPosition(ARM_REST);
+    }
+
+    /**
+     * Method is a state machine which move the Capstone arm postion and grip based on one button on the driver side
+     *
+     * @param capstonearmState the state for the capstone arm
+     */
     public void moveCapstoneArm(int capstonearmState) {
 
         switch (capstonearmState) {
@@ -76,17 +93,14 @@ public class CapstoneArmSystem {
                 ungrabCapstone();
                 armUp();
                 break;
-
             case 1:
                 ungrabCapstone();
                 armDown();
                 break;
-
             case 2:
                 grabCapstone();
                 armDown();
                 break;
-
             case 3:
                 grabCapstone();
                 armUp();
@@ -95,7 +109,7 @@ public class CapstoneArmSystem {
     }
 
     public void setArmPositon(double postionToSet) {
-        if(postionToSet < FLOOR_POSITION && postionToSet > INIT_POSITON) {
+        if (postionToSet < ARM_DOWN && postionToSet > ARM_REST) {
             liftServo.setPosition(postionToSet);
         }
     }
@@ -104,17 +118,17 @@ public class CapstoneArmSystem {
     public void lowerArm() {
         double curPositon = liftServo.getPosition();
         double newPositon = curPositon - 0.05;
-        if (newPositon > this.INIT_POSITON) {
+        if (newPositon > this.ARM_REST) {
             liftServo.setPosition(newPositon);
         }
     }
 
-    public void toogleGrip(){
-        if(isOpen){
+    public void toogleGrip() {
+        if (isOpen) {
             grabServo.setPosition(CLOSED_POSITION);
             isOpen = false;
         }
-        if(!isOpen){
+        if (!isOpen) {
             grabServo.setPosition(OPEN_POSITION);
             isOpen = true;
         }

@@ -11,11 +11,11 @@ public class CapstoneDetector {
     OpenCVObjectDetection objectDetector;
 
     public void intitalize(OpMode curOpmode){
-        objectDetector = new OpenCVObjectDetection();
-        objectDetector.initialize(curOpmode);
+//        objectDetector = new OpenCVObjectDetection();
+//        objectDetector.initialize(curOpmode);
     }
 
     public String getPosition(){
-       return objectDetector.getObjectDetectionState();
+       return POSITION_A;
     }
 }

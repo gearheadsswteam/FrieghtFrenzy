@@ -1,43 +1,24 @@
 package org.firstinspires.ftc.teamcode.robot.actionparts;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class CargoDetector {
-    private final static double  SKYSTONE_COLOR_INDEX = 2;
-    private ColorSensor colorSensor;
-    private OpMode curOpMode;
     private DistanceSensor disSensor;
+    private double EMPTY_CARGO_DIST = 50; //Empty distance is 57 mm, anything less means bucket has something
 
 
-    public CargoDetector(ColorSensor sensorColor, DistanceSensor distanceSensor, OpMode opMode) {
-        this.colorSensor = sensorColor;
+    public CargoDetector(DistanceSensor distanceSensor) {
         this.disSensor = distanceSensor;
-        this.curOpMode = opMode;
     }
 
-    public boolean isCargobucketFull() {
-//        double cc = (colorSensor.red() * colorSensor.green()) / (colorSensor.blue()*colorSensor.blue());
-//        return cc <= SKYSTONE_COLOR_INDEX;
-        if (curOpMode.gamepad2.right_trigger > 0) {
+    public  boolean isCargoBucketFull(){
+        if(disSensor.getDistance(DistanceUnit.MM) < EMPTY_CARGO_DIST){
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
-
-    public double getCargoDistance(){
-        return disSensor.getDistance(DistanceUnit.MM);
-    }
-
-    private double getCCValue(ColorSensor colorSensor) {
-        return (colorSensor.red() * colorSensor.green()) / (colorSensor.blue()*colorSensor.blue());
-    }
-
-    private double getCCOpenOrSS(ColorSensor colorSensor) {
-        return Math.round((colorSensor.red() * colorSensor.green() * colorSensor.blue())/10000);
-    }
-
 }

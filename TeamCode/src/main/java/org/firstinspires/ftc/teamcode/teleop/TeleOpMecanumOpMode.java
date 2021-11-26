@@ -9,6 +9,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
+import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
 import org.firstinspires.ftc.teamcode.robot.mecanum.MecanumDrive;
 
 
@@ -109,7 +110,7 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
 
         sidePower = tempForwardPower * Math.cos(angle) + tempSidePower * Math.sin(angle);
         forwardPower = -tempForwardPower * Math.sin(angle) + tempSidePower * Math.cos(angle);
-        turn = -gamepad1.right_stick_x;
+        turn = gamepad1.right_stick_x;
     }
 
     /**
@@ -128,17 +129,16 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
     }
 
     private void operateIntake() {
-        if (gamepad1.a && !robot.cargoDetector.isCargobucketFull()) {
-       // if (gamepad1.a) {
+        if (gamepad1.a && !robot.cargoDetector.isCargoBucketFull()) {
             robot.intakesystem.startInTake();
         } else if (gamepad1.b) {
             robot.intakesystem.stopInTake();
         } else if (gamepad1.x) {
             robot.intakesystem.startReverseInTake();
         }
-        if (robot.cargoDetector.isCargobucketFull()) {
+        if (robot.cargoDetector.isCargoBucketFull()) {
             robot.intakesystem.stopInTake();
-            robot.intakesystem.startReverseInTake();
+            //robot.intakesystem.startReverseInTake();
         }
         if (gamepad1.y) {
             robot.intakesystem.toggleIntakeOpenClosePosition();
@@ -170,6 +170,9 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
         }
     }
 
+    /**
+     * Operates the Capstone arm via a efficient state machine
+     */
     private void operateCapstoneArm() {
         if (gamepad1.y && capstoneArmTriggerUp) {
             capstoneArmState = (capstoneArmState + 1) % 4;
@@ -181,7 +184,7 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
     }
 
     private void operateCapstoneArmTeleop(){
-        float valueRecived =  gamepad2.left_stick_y;
+        float valueRecived = gamepad2.left_stick_y;
         float valueToSet = (float) (0.18 * (-valueRecived) + 0.61);
         robot.capstoneArmSystem.setArmPositon(valueToSet);
 

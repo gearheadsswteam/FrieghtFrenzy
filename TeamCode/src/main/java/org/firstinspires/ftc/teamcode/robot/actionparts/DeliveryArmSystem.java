@@ -14,16 +14,17 @@ public class DeliveryArmSystem {
 
     private boolean isTilted = false;
 
-    //Servo Positions
-    private final double TILT_BUCKET = 0.83;
-    private final double UNTILT_BUCKET = 0.36;
+    //Bucket Positions
+    private final double BUCKET_DOWN = 0.80;
+    private final double BUCKET_UP = 0.58;
+    private final double BUCKET_REST = 0.36;
 
 
     //position values
-
     private final int ELEVATOR_POSITION_LOW = 0;
-    private final int ELEVATOR_POSITION_MED = -361;
-    private final int ELEVATOR_POSITION_HIGH = -918;
+    private final int ELEVATOR_POSITION_MED = -360;
+    private final int ELEVATOR_POSITION_HIGH = -940;
+
     private LinearOpMode curOpMode;
 
 
@@ -45,6 +46,7 @@ public class DeliveryArmSystem {
 
     public void initialize() {
         liftElevator.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        liftElevator.setPower(1);
         setLiftElevatorLow();
     }
 
@@ -67,7 +69,7 @@ public class DeliveryArmSystem {
         liftElevator.setTargetPosition(elevatorHeight);
         // Turn On RUN_TO_POSITION
         liftElevator.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        liftElevator.setPower(Math.abs(0.5));
+        liftElevator.setPower(Math.abs(1));
     }
 
     boolean bucketMoveComplete = true;
@@ -76,31 +78,32 @@ public class DeliveryArmSystem {
         if (bucketMoveComplete) {
             bucketMoveComplete = false;
             if (isTilted) {
-                unTiltBucket();
+                bucketUp();
             } else {
-                tiltBucket();
+                bucketDown();
             }
             bucketMoveComplete = true;
         }
     }
 
-    public void tiltBucket() {
-        if (!isTilted) {
-            tiltBucket.setPosition(TILT_BUCKET);
-            curOpMode.sleep(700);
-            isTilted = true;
-        }
+    public void bucketDown() {
+        tiltBucket.setPosition(BUCKET_DOWN);
+        curOpMode.sleep(700);
     }
 
     /**
      * Untilts
      */
-    public void unTiltBucket() {
-        if (isTilted) {
-            tiltBucket.setPosition(UNTILT_BUCKET);
-            curOpMode.sleep(700);
-            isTilted = false;
+    public void bucketUp() {
+        tiltBucket.setPosition(BUCKET_UP);
+        curOpMode.sleep(700);
+    }
 
-        }
+    /**
+     * Untilts
+     */
+    public void bucketRest() {
+        tiltBucket.setPosition(BUCKET_REST);
+        curOpMode.sleep(700);
     }
 }

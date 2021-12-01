@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -14,7 +13,7 @@ import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneDetector;
 import org.firstinspires.ftc.teamcode.robot.actionparts.CargoDetector;
 import org.firstinspires.ftc.teamcode.robot.actionparts.DeliveryArmSystem;
-import org.firstinspires.ftc.teamcode.robot.actionparts.DuckrotationSystem;
+import org.firstinspires.ftc.teamcode.robot.actionparts.CarouselRotationSystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.Intakesystem;
 import org.firstinspires.ftc.teamcode.robot.actionparts.OdoRetract;
 
@@ -78,7 +77,7 @@ public class GearheadsMecanumRobotRR {
     public CapstoneArmSystem capstoneArmSystem;
     public Intakesystem intakesystem;
     public DeliveryArmSystem deliveryArmSystem;
-    public DuckrotationSystem duckrotationSystem;
+    public CarouselRotationSystem carouselRotationSystem;
     public CargoDetector cargoDetector;
     public OdoRetract odoRetract;
 
@@ -202,9 +201,9 @@ public class GearheadsMecanumRobotRR {
         //read hardware
         duckServo = hwMap.crservo.get("spinner");
 
-        duckrotationSystem = new DuckrotationSystem(duckServo);
+        carouselRotationSystem = new CarouselRotationSystem(duckServo);
 
-        duckrotationSystem.initialize();
+        carouselRotationSystem.initialize();
 
     }
 

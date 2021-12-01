@@ -8,8 +8,10 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
+import org.firstinspires.ftc.teamcode.ValueStorage;
+import org.firstinspires.ftc.teamcode.autonomous.AbstractAutonomousOpModeRR;
+import org.firstinspires.ftc.teamcode.drive.PoseStorage;
 import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
-import org.firstinspires.ftc.teamcode.robot.actionparts.CapstoneArmSystem;
 import org.firstinspires.ftc.teamcode.robot.mecanum.MecanumDrive;
 
 
@@ -103,13 +105,27 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
      */
     private void adjustForFOV() {
 
-        double angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle;
+        //Angle adjustment during TeleOP based on how the autonomous ends. In Game changers the TeleOPs starts with Rbot at 90 degrees from FOV.
+        double angleFromAutonomousLastRun = ValueStorage.lastPose.getHeading();
+        //double angleFromAutonomousLastRun = Math.PI/2;
 
+        double angle = 0;
+        if (ValueStorage.redMultiplier == 1) {//Red team
+            angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle + angleFromAutonomousLastRun - Math.PI / 2;
+        } else {
+            angle = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS).firstAngle + angleFromAutonomousLastRun + Math.PI / 2;
+        }
+
+
+        //Read  joystick values without FOV compensation
         double tempForwardPower = gamepad1.left_stick_y;
         double tempSidePower = gamepad1.left_stick_x;
 
+        //Adjust X & Y power based on FOV
         sidePower = tempForwardPower * Math.cos(angle) + tempSidePower * Math.sin(angle);
         forwardPower = -tempForwardPower * Math.sin(angle) + tempSidePower * Math.cos(angle);
+
+        //Read turn commands
         turn = gamepad1.right_stick_x;
     }
 
@@ -162,11 +178,11 @@ public class TeleOpMecanumOpMode extends LinearOpMode {
 
     private void operateDuckSpinner() {
         if (gamepad2.right_trigger > 0.1) {
-            robot.duckrotationSystem.rotateClockWise();
+            robot.carouselRotationSystem.rotateClockWise();
         } else if (gamepad2.left_trigger > 0.1) {
-            robot.duckrotationSystem.rotateAntiClockWise();
+            robot.carouselRotationSystem.rotateAntiClockWise();
         } else {
-            robot.duckrotationSystem.stop();
+            robot.carouselRotationSystem.stop();
         }
     }
 

@@ -2,7 +2,9 @@ package org.firstinspires.ftc.teamcode.robot.actionparts;
 
 import com.qualcomm.robotcore.hardware.Servo;
 
-
+/**
+ * Capstone Arm subsystem used to pick up Game element and deliver
+ */
 public class CapstoneArmSystem {
 
     //The Servo to lift the arm up and down
@@ -18,8 +20,8 @@ public class CapstoneArmSystem {
 
 
     //Claw position
-    private final double CLOSED_POSITION = 0.43;
-    private final double OPEN_POSITION = 0.08;
+    private final double CLOSED_POSITION = 0.76;
+    private final double OPEN_POSITION = 0.43;
 
     private boolean isOpen = true;
 
@@ -108,13 +110,19 @@ public class CapstoneArmSystem {
         }
     }
 
+    /**
+     * Sets arm position to a specific place
+     * @param postionToSet encoder value for position
+     */
     public void setArmPositon(double postionToSet) {
         if (postionToSet < ARM_DOWN && postionToSet > ARM_REST) {
             liftServo.setPosition(postionToSet);
         }
     }
 
-
+    /**
+     * Lowers the arm
+     */
     public void lowerArm() {
         double curPositon = liftServo.getPosition();
         double newPositon = curPositon - 0.05;
@@ -123,6 +131,9 @@ public class CapstoneArmSystem {
         }
     }
 
+    /**
+     * Toggles the claw open close
+     */
     public void toogleGrip() {
         if (isOpen) {
             grabServo.setPosition(CLOSED_POSITION);

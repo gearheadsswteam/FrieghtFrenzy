@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.robot.GearheadsMecanumRobotRR;
 import org.firstinspires.ftc.teamcode.robot.mecanum.MecanumDrive;
 
 
-@TeleOp(name = "Mecanum TeleOp Mode", group = "Mecanum")
+@TeleOp(name = "TeleOpTwoController", group = "Mecanum")
 //@Disabled
 public class TeleOpMecanumOpMode extends LinearOpMode {
 

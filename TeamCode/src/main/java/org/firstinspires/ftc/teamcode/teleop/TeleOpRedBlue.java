@@ -139,7 +139,7 @@ public class TeleOpRedBlue extends LinearOpMode {
                             lift.setTargetPosition(liftPositions[0]);
                         }
                     } else {
-                        intake.setPower(0.5);
+                        intake.setPower(1);
                         if (aPressed || bPressed || yPressed) {
                             if (aPressed) {
                                 liftState = 0;
@@ -155,7 +155,7 @@ public class TeleOpRedBlue extends LinearOpMode {
                     break;
                 case 1:
                     if (intakeStateTime.milliseconds() < intakeStateTimes[1][liftState]) {
-                        intake.setPower(0.5);
+                        intake.setPower(1);
                         gate.setPosition(gateDown);
                         lift.setTargetPosition(liftPositions[0]);
                     } else if (detectionFrames >= bucketDetectionFrames || aPressed) {

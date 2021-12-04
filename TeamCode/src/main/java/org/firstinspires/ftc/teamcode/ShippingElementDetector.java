@@ -71,7 +71,9 @@ public class ShippingElementDetector {
                 Imgproc.rectangle(output, maxRect, new Scalar(255, 0, 0));
                 Imgproc.putText(output, "Area: " + maxRect.area(), new Point(10, 590), 0, 1, new Scalar(0, 0, 0), 2);
                 Imgproc.putText(output, "Case: " + caseDetected, new Point(10, 630), 0, 1, new Scalar(0, 0, 0), 2);
-                return output;
+                process.release();
+                output.release();
+                return input;
             }
         };
     }

@@ -3,7 +3,7 @@ import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
 import static java.lang.Math.*;
 import static org.firstinspires.ftc.teamcode.ValueStorage.*;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
-import com.acmerobotics.roadrunner.geometry.Vector2d;
+import com.acmerobotics.roadrunner.geometry.*;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -17,13 +17,13 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousBlue2")
 public class AutonomousBlue2 extends LinearOpMode {
     Pose2d initPose = new Pose2d(-39, 62, -PI / 2);
-    Pose2d[] grabPose = {new Pose2d(-36, 54, -1.15), new Pose2d(-36, 56.5, -PI / 2), new Pose2d(-44, 56.5, -PI / 2)};
+    Pose2d[] grabPose = {new Pose2d(-33, 51, -1.15), new Pose2d(-33, 51, -PI / 2), new Pose2d(-41, 51, -PI / 2)};
     Pose2d dropPose1 = new Pose2d(-24, 33, -0.7);
     Pose2d spinnerPose = new Pose2d(-58, 57, -1.1);
     Pose2d intakePose1 = new Pose2d(16, 34, 0);
     Pose2d dropPose2 = new Pose2d(-1, 38, -2);
-    Pose2d intakePose2 = new Pose2d(48, 63, PI);
-    Pose2d parkPose = new Pose2d(38, 63, PI);
+    Pose2d intakePose2 = new Pose2d(48, 65, PI);
+    Pose2d parkPose = new Pose2d(38, 65, PI);
     SampleMecanumDrive drive;
     ShippingElementDetector camera;
     DcMotorEx intake;
@@ -36,6 +36,7 @@ public class AutonomousBlue2 extends LinearOpMode {
     String caseDetected = "C";
     String caseSet = "C";
     int detectionFrames = 0;
+    double INTAKE_SPEED = 1;
     @Override
     public void runOpMode() {
         drive = new SampleMecanumDrive(hardwareMap);
@@ -84,7 +85,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
                 .addTemporalMarker(0, 0, () -> {
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED*0.6);///This is to grab the alliance duck
                     gate.setPosition(gateDown);
                     spinner.setPower(0);})
                 .setTangent(PI / 2)
@@ -103,7 +104,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);})
+                    intake.setPower(INTAKE_SPEED);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
                 .splineTo(new Vector2d(-11, 40), 0)
                 .resetVelConstraint()
@@ -118,17 +119,17 @@ public class AutonomousBlue2 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
                 .splineToSplineHeading(new Pose2d(9, 57, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 63), 0)
+                .splineToConstantHeading(new Vector2d(13, 65), 0)
                 .lineTo(intakePose2.vec())
                 .build();
         TrajectorySequence traj7 = drive.trajectorySequenceBuilder(intakePose2)
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineTo(new Vector2d(13, 64), PI)
+                .splineTo(new Vector2d(13, 66), PI)
                 .splineToConstantHeading(new Vector2d(9, 57), 2)
                 .resetVelConstraint()
                 .splineToSplineHeading(dropPose2, dropPose2.getHeading())
@@ -143,7 +144,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                     bucket.setPosition(bucketRest);})
                 .splineToSplineHeading(new Pose2d(9, 57, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 63), 0)
+                .splineToConstantHeading(new Vector2d(13, 65), 0)
                 .lineTo(parkPose.vec())
                 .build();
         while (!isStarted() && !isStopRequested()) {
@@ -169,8 +170,9 @@ public class AutonomousBlue2 extends LinearOpMode {
         if (caseSet == "A") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[0]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -179,8 +181,9 @@ public class AutonomousBlue2 extends LinearOpMode {
         } else if (caseSet == "B") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[1]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -189,8 +192,9 @@ public class AutonomousBlue2 extends LinearOpMode {
         } else {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[2]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);

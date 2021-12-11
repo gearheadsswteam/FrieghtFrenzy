@@ -16,7 +16,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousBlue1")
 public class AutonomousBlue1 extends LinearOpMode {
     Pose2d initPose = new Pose2d(-39, 62, -PI / 2);
-    Pose2d[] grabPose = {new Pose2d(-36, 54, -1.15), new Pose2d(-36, 56.5, -PI / 2), new Pose2d(-44, 56.5, -PI / 2)};
+    Pose2d[] grabPose = {new Pose2d(-33, 51, -1.15), new Pose2d(-33, 51, -PI / 2), new Pose2d(-41, 51, -PI / 2)};
     Pose2d dropPose = new Pose2d(-24, 33, -0.7);
     Pose2d spinnerPose = new Pose2d(-58, 57, -1.1);
     Pose2d parkPose = new Pose2d(-60, 33, PI);
@@ -32,6 +32,7 @@ public class AutonomousBlue1 extends LinearOpMode {
     String caseDetected = "C";
     String caseSet = "C";
     int detectionFrames = 0;
+    double INTAKE_SPEED = 1;
     @Override
     public void runOpMode() {
         drive = new SampleMecanumDrive(hardwareMap);
@@ -81,7 +82,7 @@ public class AutonomousBlue1 extends LinearOpMode {
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
                 .addTemporalMarker(0, 0, () -> {
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateDown);
                     spinner.setPower(0);})
                 .setTangent(PI / 2)
@@ -124,8 +125,9 @@ public class AutonomousBlue1 extends LinearOpMode {
         if (caseSet == "A") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[0]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -134,8 +136,9 @@ public class AutonomousBlue1 extends LinearOpMode {
         } else if (caseSet == "B") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[1]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -144,8 +147,10 @@ public class AutonomousBlue1 extends LinearOpMode {
         } else {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
+
             drive.followTrajectory(traj1[2]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);

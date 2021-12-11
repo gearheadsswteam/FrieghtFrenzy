@@ -130,6 +130,8 @@ public class TeleOpRedBlue extends LinearOpMode {
             } else {
                 detectionFrames = 0;
             }
+
+
             switch (intakeState) {
                 case 0:
                     if (intakeStateTime.milliseconds() < intakeStateTimes[0][liftState]) {
@@ -241,10 +243,18 @@ public class TeleOpRedBlue extends LinearOpMode {
             joystickAngle = atan2(-gamepad1.left_stick_x, -gamepad1.left_stick_y);
             joystickMagnitude = pow(gamepad1.left_stick_x, 2) + pow(gamepad1.left_stick_y, 2);
             turn = gamepad1.right_stick_x;
-            fr.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) - turn, -1, 1));
-            fl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) + turn, -1, 1));
-            br.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) - turn, -1, 1));
-            bl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) + turn, -1, 1));
+
+            if(gamepad1.right_trigger< 0.1) {
+                fr.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) - turn, -1, 1));
+                fl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) + turn, -1, 1));
+                br.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) - turn, -1, 1));
+                bl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) + turn, -1, 1));
+            }else{//speed Damper if right trigger pressed.
+                fr.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) - turn, -1, 1)/2);
+                fl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) + turn, -1, 1)/2);
+                br.setPower(Range.clip(joystickMagnitude * sin(PI / 4 - joystickAngle + robotHeading) - turn, -1, 1)/2);
+                bl.setPower(Range.clip(joystickMagnitude * sin(PI / 4 + joystickAngle - robotHeading) + turn, -1, 1)/2);
+            }
         }
     }
 }

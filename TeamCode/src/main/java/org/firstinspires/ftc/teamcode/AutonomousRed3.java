@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousRed3")
 public class AutonomousRed3 extends LinearOpMode {
     Pose2d initPose = new Pose2d(8, -62, PI / 2);
-    Pose2d[] grabPose = {new Pose2d(4, -51, PI / 2), new Pose2d(12, -51, PI / 2), new Pose2d(12, -48, 1.15)};
+    Pose2d[] grabPose = {new Pose2d(4, -51, PI / 2), new Pose2d(12, -51, PI / 2), new Pose2d(12, -49, 1.15)};
     Pose2d dropPose1 = new Pose2d(2, -35, 2.3);
     Pose2d dropPose2 = new Pose2d(-3, -39, 2);
     Pose2d intakePose = new Pose2d(48, -63, PI);

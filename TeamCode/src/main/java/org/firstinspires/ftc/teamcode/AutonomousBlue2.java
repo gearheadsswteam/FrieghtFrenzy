@@ -20,7 +20,7 @@ public class AutonomousBlue2 extends LinearOpMode {
     Pose2d[] grabPose = {new Pose2d(-33, 51, -1.15), new Pose2d(-33, 51, -PI / 2), new Pose2d(-41, 51, -PI / 2)};
     Pose2d dropPose1 = new Pose2d(-24, 33, -0.7);
     Pose2d spinnerPose = new Pose2d(-58, 57, -1.1);
-    Pose2d intakePose1 = new Pose2d(16, 34, 0);
+    Pose2d intakePose1 = new Pose2d(18, 36, 0);
     Pose2d dropPose2 = new Pose2d(-1, 38, -2);
     Pose2d intakePose2 = new Pose2d(48, 65, PI);
     Pose2d parkPose = new Pose2d(38, 65, PI);
@@ -106,7 +106,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                     bucket.setPosition(bucketRest);
                     intake.setPower(INTAKE_SPEED);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineTo(new Vector2d(-11, 40), 0)
+                .splineTo(new Vector2d(-11, 42), 0)
                 .resetVelConstraint()
                 .splineTo(intakePose1.vec(), intakePose1.getHeading())
                 .setReversed(false)
@@ -121,7 +121,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                     bucket.setPosition(bucketRest);
                     intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
-                .splineToSplineHeading(new Pose2d(9, 57, PI), PI - 2)
+                .splineToSplineHeading(new Pose2d(9, 59, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
                 .splineToConstantHeading(new Vector2d(13, 65), 0)
                 .lineTo(intakePose2.vec())
@@ -130,7 +130,7 @@ public class AutonomousBlue2 extends LinearOpMode {
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
                 .splineTo(new Vector2d(13, 66), PI)
-                .splineToConstantHeading(new Vector2d(9, 57), 2)
+                .splineToConstantHeading(new Vector2d(9, 59), 2)
                 .resetVelConstraint()
                 .splineToSplineHeading(dropPose2, dropPose2.getHeading())
                 .addTemporalMarker(1, -1, () -> {lift.setTargetPosition(liftPositions[2]);

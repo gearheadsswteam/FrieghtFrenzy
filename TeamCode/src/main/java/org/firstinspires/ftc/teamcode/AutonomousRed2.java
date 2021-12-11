@@ -83,7 +83,7 @@ public class AutonomousRed2 extends LinearOpMode {
                 .splineTo(spinnerPose.vec(), spinnerPose.getHeading() + PI)
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
-                .addTemporalMarker(0, 0, () -> {intake.setPower(INTAKE_SPEED);
+                .addTemporalMarker(0, 0, () -> {intake.setPower(INTAKE_SPEED*.6);///This is to grab the alliance duck
                     gate.setPosition(gateDown);
                     spinner.setPower(0);})
                 .setTangent(-PI / 2)

@@ -32,6 +32,7 @@ public class AutonomousRed1 extends LinearOpMode {
     String caseDetected = "C";
     String caseSet = "C";
     int detectionFrames = 0;
+    double INTAKE_SPEED = 1;
     @Override
     public void runOpMode() {
         drive = new SampleMecanumDrive(hardwareMap);
@@ -81,7 +82,7 @@ public class AutonomousRed1 extends LinearOpMode {
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
                 .addTemporalMarker(0, 0, () -> {
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateDown);
                     spinner.setPower(0);})
                 .setTangent(-PI / 2)

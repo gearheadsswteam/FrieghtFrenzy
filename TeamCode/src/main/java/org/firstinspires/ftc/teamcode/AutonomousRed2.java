@@ -36,6 +36,7 @@ public class AutonomousRed2 extends LinearOpMode {
     String caseDetected = "C";
     String caseSet = "C";
     int detectionFrames = 0;
+    double INTAKE_SPEED = 1;
     @Override
     public void runOpMode() {
         drive = new SampleMecanumDrive(hardwareMap);
@@ -82,7 +83,7 @@ public class AutonomousRed2 extends LinearOpMode {
                 .splineTo(spinnerPose.vec(), spinnerPose.getHeading() + PI)
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
-                .addTemporalMarker(0, 0, () -> {intake.setPower(0.5);
+                .addTemporalMarker(0, 0, () -> {intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateDown);
                     spinner.setPower(0);})
                 .setTangent(-PI / 2)
@@ -101,7 +102,7 @@ public class AutonomousRed2 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);})
+                    intake.setPower(INTAKE_SPEED);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
                 .splineTo(new Vector2d(-11, -40), 0)
                 .resetVelConstraint()
@@ -116,7 +117,7 @@ public class AutonomousRed2 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
                 .splineToSplineHeading(new Pose2d(9, -57, PI), 2 + PI)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))

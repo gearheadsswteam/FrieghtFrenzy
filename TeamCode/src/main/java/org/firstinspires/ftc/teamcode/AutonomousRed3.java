@@ -3,7 +3,7 @@ import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
 import static java.lang.Math.*;
 import static org.firstinspires.ftc.teamcode.ValueStorage.*;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
-import com.acmerobotics.roadrunner.geometry.Vector2d;
+import com.acmerobotics.roadrunner.geometry.*;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousRed3")
 public class AutonomousRed3 extends LinearOpMode {
     Pose2d initPose = new Pose2d(8, -62, PI / 2);
-    Pose2d[] grabPose = {new Pose2d(3, -56.5, PI / 2), new Pose2d(11, -56.5, PI / 2), new Pose2d(11, -54, 1.15)};
+    Pose2d[] grabPose = {new Pose2d(4, -51, PI / 2), new Pose2d(12, -51, PI / 2), new Pose2d(12, -48, 1.15)};
     Pose2d dropPose1 = new Pose2d(2, -35, 2.3);
     Pose2d dropPose2 = new Pose2d(-3, -39, 2);
     Pose2d intakePose = new Pose2d(48, -63, PI);
@@ -36,6 +36,7 @@ public class AutonomousRed3 extends LinearOpMode {
     String caseDetected = "C";
     String caseSet = "C";
     int detectionFrames = 0;
+    double INTAKE_SPEED = 1;
     @Override
     public void runOpMode() {
         drive = new SampleMecanumDrive(hardwareMap);
@@ -80,7 +81,7 @@ public class AutonomousRed3 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
                 .splineToSplineHeading(new Pose2d(9, -57, PI), 2 + PI)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
@@ -103,7 +104,7 @@ public class AutonomousRed3 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
                 .splineToSplineHeading(new Pose2d(9, -58, PI), 2 + PI)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
@@ -126,7 +127,7 @@ public class AutonomousRed3 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
-                    intake.setPower(0.5);
+                    intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
                 .splineToSplineHeading(new Pose2d(9, -59, PI), 2 + PI)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
@@ -177,8 +178,9 @@ public class AutonomousRed3 extends LinearOpMode {
         if (caseSet == "A") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[0]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -187,8 +189,9 @@ public class AutonomousRed3 extends LinearOpMode {
         } else if (caseSet == "B") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[1]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -197,8 +200,9 @@ public class AutonomousRed3 extends LinearOpMode {
         } else {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[2]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);

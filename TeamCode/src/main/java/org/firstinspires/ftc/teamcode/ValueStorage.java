@@ -3,7 +3,7 @@ import com.acmerobotics.roadrunner.geometry.Pose2d;
 public class ValueStorage {
     public static final double armRest = 0.20;
     public static final double armDown = 0.50;
-    public static final double armUp = 0.30;
+    public static final double armUp = 0.29;
     public static final double clawOpen = 0.43;
     public static final double clawClosed = 0.76;
     public static final double bucketRest = 0.36;

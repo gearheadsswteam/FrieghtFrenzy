@@ -17,13 +17,13 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousBlue3")
 public class AutonomousBlue3 extends LinearOpMode {
     Pose2d initPose = new Pose2d(8, 62, -PI / 2);
-    Pose2d[] grabPose = {new Pose2d(8, 48, -1.15), new Pose2d(8, 51, -PI / 2), new Pose2d(0, 51, -PI / 2)};
+    Pose2d[] grabPose = {new Pose2d(14, 51, -1.15), new Pose2d(14, 51, -PI / 2), new Pose2d(6, 51, -PI / 2)};
     Pose2d dropPose1 = new Pose2d(2, 35, -2.3);
-    Pose2d dropPose2 = new Pose2d(-3, 39, -2);
-    Pose2d intakePose = new Pose2d(48, 63, PI);
-    Pose2d intakePose2 = new Pose2d(51, 64, PI);
-    Pose2d intakePose3 = new Pose2d(54, 65, PI);
-    Pose2d parkPose = new Pose2d(38, 66, PI);
+    Pose2d dropPose2 = new Pose2d(1, 38, -2);
+    Pose2d intakePose = new Pose2d(48, 64, PI);
+    Pose2d intakePose2 = new Pose2d(51, 65, PI);
+    Pose2d intakePose3 = new Pose2d(54, 66, PI);
+    Pose2d parkPose = new Pose2d(38, 67, PI);
     SampleMecanumDrive drive;
     ShippingElementDetector camera;
     DcMotorEx intake;
@@ -83,16 +83,16 @@ public class AutonomousBlue3 extends LinearOpMode {
                     bucket.setPosition(bucketRest);
                     intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
-                .splineToSplineHeading(new Pose2d(9, 57, PI), PI - 2)
+                .splineToSplineHeading(new Pose2d(9, 58, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 63), 0)
+                .splineToConstantHeading(new Vector2d(13, 64), 0)
                 .lineTo(intakePose.vec())
                 .build();
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(intakePose)
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineTo(new Vector2d(13, 64), PI)
-                .splineToConstantHeading(new Vector2d(9, 57), -2)
+                .splineTo(new Vector2d(13, 65), PI)
+                .splineToConstantHeading(new Vector2d(9, 58), -2)
                 .resetVelConstraint()
                 .splineToSplineHeading(dropPose2, dropPose2.getHeading())
                 .addTemporalMarker(1, -1, () -> {lift.setTargetPosition(liftPositions[2]);
@@ -106,16 +106,16 @@ public class AutonomousBlue3 extends LinearOpMode {
                     bucket.setPosition(bucketRest);
                     intake.setPower(INTAKE_SPEED);
                     gate.setPosition(gateUp);})
-                .splineToSplineHeading(new Pose2d(9, 58, PI), PI - 2)
+                .splineToSplineHeading(new Pose2d(9, 59, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 64), 0)
+                .splineToConstantHeading(new Vector2d(13, 65), 0)
                 .lineTo(intakePose2.vec())
                 .build();
         TrajectorySequence traj6 = drive.trajectorySequenceBuilder(intakePose2)
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineTo(new Vector2d(13, 65), PI)
-                .splineToConstantHeading(new Vector2d(9, 58), -2)
+                .splineTo(new Vector2d(13, 66), PI)
+                .splineToConstantHeading(new Vector2d(9, 59), -2)
                 .resetVelConstraint()
                 .splineToSplineHeading(dropPose2, dropPose2.getHeading())
                 .addTemporalMarker(1, -1, () -> {lift.setTargetPosition(liftPositions[2]);
@@ -129,16 +129,16 @@ public class AutonomousBlue3 extends LinearOpMode {
                     bucket.setPosition(bucketRest);
                     intake.setPower(0.5);
                     gate.setPosition(gateUp);})
-                .splineToSplineHeading(new Pose2d(9, 59, PI), PI - 2)
+                .splineToSplineHeading(new Pose2d(9, 60, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 65), 0)
+                .splineToConstantHeading(new Vector2d(13, 66), 0)
                 .lineTo(intakePose3.vec())
                 .build();
         TrajectorySequence traj8 = drive.trajectorySequenceBuilder(intakePose3)
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineTo(new Vector2d(13, 66), PI)
-                .splineToConstantHeading(new Vector2d(9, 59), -2)
+                .splineTo(new Vector2d(13, 67), PI)
+                .splineToConstantHeading(new Vector2d(9, 60), -2)
                 .resetVelConstraint()
                 .splineToSplineHeading(dropPose2, dropPose2.getHeading())
                 .addTemporalMarker(1, -1, () -> {lift.setTargetPosition(liftPositions[2]);
@@ -150,9 +150,9 @@ public class AutonomousBlue3 extends LinearOpMode {
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);})
-                .splineToSplineHeading(new Pose2d(9, 60, PI), PI - 2)
+                .splineToSplineHeading(new Pose2d(9, 61, PI), PI - 2)
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
-                .splineToConstantHeading(new Vector2d(13, 66), 0)
+                .splineToConstantHeading(new Vector2d(13, 67), 0)
                 .lineTo(parkPose.vec())
                 .build();
         while (!isStarted() && !isStopRequested()) {

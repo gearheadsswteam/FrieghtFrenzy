@@ -3,7 +3,7 @@ import static com.qualcomm.robotcore.hardware.DcMotorSimple.Direction.REVERSE;
 import static java.lang.Math.*;
 import static org.firstinspires.ftc.teamcode.ValueStorage.*;
 import com.acmerobotics.roadrunner.geometry.Pose2d;
-import com.acmerobotics.roadrunner.geometry.Vector2d;
+import com.acmerobotics.roadrunner.geometry.*;
 import com.acmerobotics.roadrunner.trajectory.Trajectory;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 @Autonomous (name = "AutonomousRed2")
 public class AutonomousRed2 extends LinearOpMode {
     Pose2d initPose = new Pose2d(-39, -62, PI / 2);
-    Pose2d[] grabPose = {new Pose2d(-44, -56.5, PI / 2), new Pose2d(-36, -56.5, PI / 2), new Pose2d(-36, -54, 1.15)};
+    Pose2d[] grabPose = {new Pose2d(-43, -51, PI / 2), new Pose2d(-35, -51, PI / 2), new Pose2d(-35, -48, 1.15)};
     Pose2d dropPose1 = new Pose2d(-24, -33, 0.7);
     Pose2d spinnerPose = new Pose2d(-58, -57, 1.1);
     Pose2d intakePose1 = new Pose2d(16, -34, 0);
@@ -167,8 +167,8 @@ public class AutonomousRed2 extends LinearOpMode {
         if (caseSet == "A") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[0]);
-            sleep(1500);
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -177,8 +177,9 @@ public class AutonomousRed2 extends LinearOpMode {
         } else if (caseSet == "B") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[1]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);
@@ -187,8 +188,9 @@ public class AutonomousRed2 extends LinearOpMode {
         } else {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
+            sleep(1800);
             drive.followTrajectory(traj1[2]);
-            sleep(1500);
+
             claw.setPosition(clawClosed);
             sleep(500);
             arm.setPosition(armRest);

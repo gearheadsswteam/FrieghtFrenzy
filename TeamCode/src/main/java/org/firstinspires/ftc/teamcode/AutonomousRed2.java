@@ -54,6 +54,8 @@ public class AutonomousRed2 extends LinearOpMode {
         lift.setTargetPosition(0);
         lift.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         camera.initialize();
+
+        //Start to grab positons [0[ = postion A; [1] = postion B and [2] = position C
         Trajectory[] traj1 = {drive.trajectoryBuilder(initPose)
                 .lineToLinearHeading(grabPose[0])
                 .build(),
@@ -63,6 +65,8 @@ public class AutonomousRed2 extends LinearOpMode {
                 drive.trajectoryBuilder(initPose)
                 .lineToLinearHeading(grabPose[2])
                 .build()};
+
+        //Grab position to dropping the preloaded box on the shipping hub. Array has the three start positions which are the grab positions
         Trajectory[] traj2 = {drive.trajectoryBuilder(grabPose[0])
                 .splineTo(dropPose1.vec(), dropPose1.getHeading())
                 .addTemporalMarker(1, 0, () -> {bucket.setPosition(bucketDown);})
@@ -76,12 +80,27 @@ public class AutonomousRed2 extends LinearOpMode {
                 .splineTo(dropPose1.vec(), dropPose1.getHeading())
                 .addTemporalMarker(1, 0, () -> {bucket.setPosition(bucketDown);})
                 .build()};
+
+
+        /**
+         * Drop off ot the Carousel
+         * After 0.5 seconds reset the ift and start the spinner
+         *
+         */
+
         Trajectory traj3 = drive.trajectoryBuilder(dropPose1, true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
                     bucket.setPosition(bucketRest);
                     spinner.setPower(1);})
                 .splineTo(spinnerPose.vec(), spinnerPose.getHeading() + PI)
                 .build();
+
+        /**
+         * Intake the duck and go to the shipping hub
+         * 1 second before the end move lift to highest position
+         * Drop off the duck
+         */
+
         TrajectorySequence traj4 = drive.trajectorySequenceBuilder(spinnerPose)
                 .addTemporalMarker(0, 0, () -> {intake.setPower(INTAKE_SPEED*.6);///This is to grab the alliance duck
                     gate.setPosition(gateDown);
@@ -98,6 +117,13 @@ public class AutonomousRed2 extends LinearOpMode {
                     intake.setPower(0);})
                 .addTemporalMarker(1, 0, () -> {bucket.setPosition(bucketDown);})
                 .build();
+
+        /**
+         * Intake the alliance duck and drop it to the shipping hub
+         * TM 1: Resets the lift and starts the inake
+         * TM2: Lift to the high position 1 second before the end point
+         * TM 2: Drop off the duck
+         */
         TrajectorySequence traj5 = drive.trajectorySequenceBuilder(dropPose1)
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
@@ -113,6 +139,11 @@ public class AutonomousRed2 extends LinearOpMode {
                     bucket.setPosition(bucketUp);})
                 .addTemporalMarker(1, 0, () -> {bucket.setPosition(bucketDown);})
                 .build();
+
+        /**
+         * Go the warehouse and take a cargo
+         * TM1: Resets the lift , starts the intake, & gate up
+         */
         TrajectorySequence traj6 = drive.trajectorySequenceBuilder(dropPose2)
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
@@ -124,6 +155,13 @@ public class AutonomousRed2 extends LinearOpMode {
                 .splineToConstantHeading(new Vector2d(13, -63), 0)
                 .lineTo(intakePose2.vec())
                 .build();
+
+        /**
+         * Go from warehouse to the shipping element for drop off
+         * TM1: gate down 0.5 secomnds on route
+         * TM2: Lift high position, i sec before end
+         * TM3: Drop the bucket
+         */
         TrajectorySequence traj7 = drive.trajectorySequenceBuilder(intakePose2)
                 .addTemporalMarker(0.5, () -> {gate.setPosition(gateDown);})
                 .setVelConstraint(SampleMecanumDrive.getVelocityConstraint(30, DriveConstants.MAX_ANG_VEL, DriveConstants.TRACK_WIDTH))
@@ -136,6 +174,11 @@ public class AutonomousRed2 extends LinearOpMode {
                     intake.setPower(0);})
                 .addTemporalMarker(1, 0, () -> {bucket.setPosition(bucketDown);})
                 .build();
+
+        /**
+         * Park in the warehouse
+         * TM1: Rest lift
+         */
         TrajectorySequence traj8 = drive.trajectorySequenceBuilder(dropPose2)
                 .setReversed(true)
                 .addTemporalMarker(0.5, () -> {lift.setTargetPosition(liftPositions[0]);
@@ -145,6 +188,7 @@ public class AutonomousRed2 extends LinearOpMode {
                 .splineToConstantHeading(new Vector2d(13, -63), 0)
                 .lineTo(parkPose.vec())
                 .build();
+
         while (!isStarted() && !isStopRequested()) {
             if (camera.caseDetected() == caseDetected) {
                 detectionFrames++;
@@ -165,6 +209,8 @@ public class AutonomousRed2 extends LinearOpMode {
         ValueStorage.lastPose = parkPose;
         camera.end();
         lift.setPower(1);
+
+        //Grab the Shipping element and drop off the box
         if (caseSet == "A") {
             arm.setPosition(armDown);
             claw.setPosition(clawOpen);
